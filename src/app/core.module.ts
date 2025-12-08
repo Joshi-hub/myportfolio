@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './core/layout/header/header.component';
 import { FooterComponent } from './core/layout/footer/footer.component';
 
-
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -12,7 +10,10 @@ import { FooterComponent } from './core/layout/footer/footer.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent   
   ]
-  
 })
 export class CoreModule { }

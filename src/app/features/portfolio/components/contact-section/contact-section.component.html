@@ -1,1 +1,49 @@
-<p>contact-section works!</p>
+<div class="container contact-section">
+  <app-section-title
+    title="Kontakt"
+    subtitle="Schreib mir eine Nachricht"
+  ></app-section-title>
+
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <label for="name">Name</label>
+    <input
+      [(ngModel)]="contactData.name"
+      name="name"
+      type="text"
+      id="name"
+      class="form-control"
+      placeholder="Your Name"
+      required
+    />
+
+    <label for="email">Email</label>
+    <input
+      [(ngModel)]="contactData.email"
+      name="email"
+      type="email"
+      id="email"
+      class="form-control"
+      placeholder="Your Email"
+      required
+    />
+
+    <label for="message">Message</label>
+    <textarea
+      [(ngModel)]="contactData.message"
+      name="message"
+      id="message"
+      class="form-control"
+      rows="5"
+      placeholder="Your Message"
+      required
+    ></textarea>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="contactForm.invalid"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
