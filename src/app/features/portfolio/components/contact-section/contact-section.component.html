@@ -4,7 +4,7 @@
     subtitle="Schreib mir eine Nachricht"
   ></app-section-title>
 
-  <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     <label for="name">Name</label>
     <input
       [(ngModel)]="contactData.name"
