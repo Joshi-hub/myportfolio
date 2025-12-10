@@ -1,49 +1,87 @@
-<div class="container contact-section">
-  <app-section-title
-    title="Kontakt"
-    subtitle="Schreib mir eine Nachricht"
-  ></app-section-title>
+<section class="contact-section" id="contact">
+  
+  <div class="torn-paper-top"></div>
 
-  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    <label for="name">Name</label>
-    <input
-      [(ngModel)]="contactData.name"
-      name="name"
-      type="text"
-      id="name"
-      class="form-control"
-      placeholder="Your Name"
-      required
-    />
+  <div class="container">
+    
+    <div class="content-wrapper">
+      
+      <div class="contact-info">
+        <h4 class="section-tag">Contact</h4>
+        <h2 class="main-title">Ready to work <br> together?</h2>
+        
+        <p class="description">
+          Puntual, clean code and efficient delivery is my promise.
+          Let's create something amazing together.
+          (Hier deinen Text einfügen)
+        </p>
 
-    <label for="email">Email</label>
-    <input
-      [(ngModel)]="contactData.email"
-      name="email"
-      type="email"
-      id="email"
-      class="form-control"
-      placeholder="Your Email"
-      required
-    />
+        <div class="arrow-container">
+          <img src="assets/img/Line.png" alt="arrow" class="arrow-img">
+        </div>
+      </div>
 
-    <label for="message">Message</label>
-    <textarea
-      [(ngModel)]="contactData.message"
-      name="message"
-      id="message"
-      class="form-control"
-      rows="5"
-      placeholder="Your Message"
-      required
-    ></textarea>
+      <div class="form-wrapper">
+        
+        <img src="assets/img/stamp.png" alt="Stamp" class="stamp-img">
 
-    <button
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="contactForm.invalid"
-    >
-      Send Message
-    </button>
-  </form>
-</div>
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+          
+          <div class="form-group">
+            <label for="name">What's your name?</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="contactData.name"
+              placeholder="John Doe"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">What's your email?</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="contactData.email"
+              placeholder="john@example.com"
+              required
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can I help you?</label>
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="contactData.message"
+              placeholder="Hello Joshua, I need a website..."
+              rows="4"
+              required
+              class="form-input textarea"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="contactForm.invalid"
+          >
+            Say hello :)
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+
+    <div class="footer-wrapper">
+      <app-footer></app-footer>
+    </div>
+
+  </div>
+</section>

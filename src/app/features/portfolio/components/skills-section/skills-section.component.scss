@@ -7,6 +7,7 @@
   padding: 250px 0; 
   overflow: hidden;
   height: 100vh;
+  color: var(--text-main);
 }
 
 .container {
@@ -49,7 +50,7 @@
 }
 
 .description {
-  color: #222; 
+  color: var(--bg-dark); 
   padding: 1.5rem;
   max-width: 450px;
   font-size: 1rem;
@@ -98,6 +99,10 @@
 
   &:hover {
     transform: scale(1.1); 
+    .skill-name {
+      color: var(--primary-purple);
+      transition: color 0.3s ease;
+    }
   }
 
   img {
@@ -113,6 +118,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
+    color: var(--highlight-blue); 
   }
 }
 
