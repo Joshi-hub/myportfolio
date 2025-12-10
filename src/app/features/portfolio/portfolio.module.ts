@@ -7,7 +7,7 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { SkillsSectionComponent } from './components/skills-section/skills-section.component';
 import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module'; 
 
 @NgModule({
   declarations: [
