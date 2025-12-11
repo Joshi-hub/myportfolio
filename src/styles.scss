@@ -1,8 +1,8 @@
 :root {
-  --black: #000000;
-  --white: #ffffff;
+  --black: #0E1013;
+  --white: #f8f9fa;
   --bg-dark: #141414;     
-  --bg-darker: #0f0f0f;   
+  --bg-darker: #0E161F;   
   --primary-purple: #9747FF; 
   --accent-orange: #FF5C00;  
   --success-green: #37C362;  
@@ -88,8 +88,8 @@ p {
 }
 
 .container {
+  max-width: 1440px;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
 }
