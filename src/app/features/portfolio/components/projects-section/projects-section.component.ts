@@ -28,7 +28,7 @@ export class ProjectsSectionComponent {
         { name: 'CSS', icon: 'assets/img/css.png' },
         { name: 'JavaScript', icon: 'assets/img/javascript.png' }
       ],
-      image: 'assets/img/Pollo.png', 
+      image: 'assets/img/join.jpg', 
       link: '#',   
       github: '#'  
     },

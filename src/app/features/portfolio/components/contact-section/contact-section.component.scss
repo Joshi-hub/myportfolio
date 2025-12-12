@@ -86,7 +86,6 @@
     right: -20px;
     width: 80px;
     height: 80px;
-    animation: rotate 10s linear infinite; 
   }
 }
 
@@ -155,9 +154,4 @@
       cursor: not-allowed;
     }
   }
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

@@ -4,9 +4,9 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   position: relative;
-  padding: 250px 0; 
+  padding: 150px 0; 
   overflow: hidden;
-  height: 100vh;
+  height: 80vh;
   color: var(--text-main);
 }
 
@@ -79,7 +79,6 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   gap: 2rem;
-  row-gap: 2rem; 
   justify-items: center;
   align-items: start;
   width: 100%; 

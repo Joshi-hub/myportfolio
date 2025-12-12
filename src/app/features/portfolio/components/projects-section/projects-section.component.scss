@@ -19,7 +19,7 @@
   @media (min-width: 900px) {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .header-left {
@@ -77,10 +77,6 @@
     flex-direction: row;
     align-items: center;
     gap: 5rem;
-
-    &.reverse-layout {
-      flex-direction: row-reverse;
-    }
   }
 }
 
@@ -92,9 +88,7 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    border: 3px solid var(--black); 
-    box-shadow: 6px 6px 0px var(--black);
+    border-radius: 10px;
   }
 }
 
