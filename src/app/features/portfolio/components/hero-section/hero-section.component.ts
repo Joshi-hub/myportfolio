@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero-section.component.scss'
 })
 export class HeroSectionComponent {
+  frontend = 'FRONTEND'.split('');
+  developer = 'DEVELOPER'.split('');
 
 }

@@ -5,36 +5,80 @@
     <ul class="hero__socials">
       <li>
         <a href="#" target="_blank" rel="noopener noreferrer">
-          <img src="assets/img/linked.png" alt="LinkedIn" class="hero__social-img" />
+          <img
+            src="assets/img/linked.png"
+            alt="LinkedIn"
+            class="hero__social-img"
+          />
         </a>
       </li>
       <li>
-        <a href="https://github.com/Joshi-hub" target="_blank" rel="noopener noreferrer">
-          <img src="assets/img/github.png" alt="GitHub" class="hero__social-img" />
+        <a
+          href="https://github.com/Joshi-hub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/img/github.png"
+            alt="GitHub"
+            class="hero__social-img"
+          />
         </a>
       </li>
       <li>
         <a href="mailto:deine-mail@example.com">
-          <img src="assets/img/contact.png" alt="E-Mail" class="hero__social-img" />
+          <img
+            src="assets/img/contact.png"
+            alt="E-Mail"
+            class="hero__social-img"
+          />
         </a>
       </li>
     </ul>
 
     <div class="hero__box">
       <div class="hero__badge-container">
-        <img src="/assets/img/waving_hand.png" alt="Wave" class="hero__hand-img">
-        <span class="hero__badge-text hero__badge-text--initial">Hello world</span>
-        <span class="hero__badge-text hero__badge-text--hover">I'm Joshua Auerbach :)</span>
+        <img
+          src="/assets/img/waving_hand.png"
+          alt="Wave"
+          class="hero__hand-img"
+        />
+        <span class="hero__badge-text hero__badge-text--initial"
+          >Hello world</span
+        >
+        <span class="hero__badge-text hero__badge-text--hover"
+          >I'm Joshua Auerbach :)</span
+        >
       </div>
       <div class="hero__title-row">
-        <div class="hero__frontend">Frontend</div>
+        <div class="hero__frontend hero__word">
+          <span
+            class="hero__char"
+            *ngFor="let ch of frontend"
+            [attr.data-upper]="ch"
+            [attr.data-lower]="ch.toLowerCase()"
+            [attr.aria-label]="ch"
+          ></span>
+        </div>
 
         <div class="hero__polaroid">
-          <img src="assets/img/Group 31.png" alt="Joshua" class="hero__polaroid-img" />
+          <img
+            src="assets/img/Group 31.png"
+            alt="Joshua"
+            class="hero__polaroid-img"
+          />
         </div>
       </div>
 
-      <div class="hero__developer">DEVELOPER</div>
+      <div class="hero__developer hero__word">
+        <span
+          class="hero__char"
+          *ngFor="let ch of developer"
+          [attr.data-upper]="ch"
+          [attr.data-lower]="ch.toLowerCase()"
+          [attr.aria-label]="ch"
+        ></span>
+      </div>
 
       <button class="hero__cta" type="button">Get in Touch</button>
     </div>
