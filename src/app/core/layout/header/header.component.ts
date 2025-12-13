@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService, Language } from '../../../language.service';
 
 @Component({
   selector: 'app-header',
@@ -6,18 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  activeLanguage: 'en' | 'de' = 'en';
 
-  setLanguage(lang: 'en' | 'de'): void {
-    if (this.activeLanguage === lang) return;
-    this.activeLanguage = lang;
-    document.documentElement.lang = lang;
+  constructor(public language: LanguageService) {}
+
+  setLanguage(lang: Language): void {
+    this.language.setLanguage(lang);
   }
 
-  get langSwitchClasses(): { [klass: string]: boolean } {
+  get langSwitchClasses(): { [key: string]: boolean } {
     return {
-      'lang-switch--en-active': this.activeLanguage === 'en',
-      'lang-switch--de-active': this.activeLanguage === 'de'
+      'lang-switch--en-active': this.language.language === 'en',
+      'lang-switch--de-active': this.language.language === 'de'
     };
   }
 }
