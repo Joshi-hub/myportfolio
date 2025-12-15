@@ -118,17 +118,12 @@ h2 {
   flex: 0 0 auto;
 }
 
-.sticker-img {
-  width: 140px;
-  height: auto;
+.sticker-btn {
+  background: none;
+  border: 0;
+  padding: 0;
   cursor: pointer;
-  transition: transform 0.25s ease, filter 0.25s ease;
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
-}
-
-.sticker-img:hover {
-  transform: rotate(0deg) scale(1.08);
-  filter: drop-shadow(4px 8px 10px rgba(0, 0, 0, 0.5));
+  display: inline-block;
 }
 
 @media (min-width: 640px) {
@@ -170,11 +165,4 @@ h2 {
     width: 96px;
   }
 
-  .sticker-img {
-    width: 170px;
-  }
-
-  .sticker-wrapper {
-    transform: translateY(14px);
-  }
 }

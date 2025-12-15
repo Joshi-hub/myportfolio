@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-skills-section',
   templateUrl: './skills-section.component.html',
-  styleUrl: './skills-section.component.scss'
+  styleUrl: './skills-section.component.scss',
 })
 export class SkillsSectionComponent {
   skills = [
@@ -16,6 +16,35 @@ export class SkillsSectionComponent {
     { name: 'Git', icon: 'assets/img/git.png' },
     { name: 'Material', icon: 'assets/img/md.png' },
     { name: 'scrum', icon: 'assets/img/scrum.png' },
-    { name: 'Rest-API', icon: 'assets/img/rastapi.png' }
+    { name: 'Rest-API', icon: 'assets/img/rastapi.png' },
   ];
+
+  private readonly IMG_CLOSED = 'assets/img/sticker.png';
+  private readonly IMG_MID = 'assets/img/Property 1=Variant3.png';
+  private readonly IMG_OPEN = 'assets/img/Property 1=Hover (1).png';
+
+  stickerSrc = this.IMG_CLOSED;
+  isOpen = false;
+  isAnimating = false;
+
+  private midFrameMs = 160;
+  private totalMs = 320;
+
+  toggleSticker(): void {
+    if (this.isAnimating) return;
+
+    this.isAnimating = true;
+    this.stickerSrc = this.IMG_MID;
+
+    window.setTimeout(() => {
+      this.stickerSrc = this.isOpen ? this.IMG_CLOSED : this.IMG_OPEN;
+      this.isOpen = !this.isOpen;
+    }, this.midFrameMs);
+
+    window.setTimeout(() => {
+      this.isAnimating = false;
+    }, this.totalMs);
+  }
+
+
 }
