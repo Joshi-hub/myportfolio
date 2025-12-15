@@ -20,7 +20,7 @@
   position: relative;
   display: inline-block;
   text-align: center;
-  padding: 0 50px; 
+  padding: 0 50px;
 }
 
 h4 {
@@ -103,11 +103,15 @@ h2 {
   width: 70px;
   height: auto;
   display: block;
-  transition: transform 0.2s ease;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
 }
 
 .skill-card:hover img {
-  transform: translateY(-2px);
+  filter: none;
+  opacity: 1;
+  transform: scale(1.12);
 }
 
 .sticker-wrapper {
