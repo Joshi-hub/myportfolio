@@ -11,8 +11,7 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
-  padding: clamp(40px, 6vw, 80px) clamp(24px, 6vw, 80px);
+  gap: clamp(40px, 6vw, 120px);
 }
 
 .about__left {
@@ -22,10 +21,6 @@
   align-items: flex-start;
   position: relative;
   isolation: isolate;
-}
-
-.about__right {
-  flex: 0.9;
 }
 
 .about__left img {
