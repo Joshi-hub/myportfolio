@@ -1,41 +1,50 @@
 <section class="testimonials" aria-labelledby="testimonials-title">
-    <div class="inner">
-      <div class="eyebrow">
-        <img class="eyebrow__arrow" src="assets/img/Blue A.png" alt="" aria-hidden="true" />
-        <span>IN THEIR WORDS:</span>
-      </div>
-      <h2 id="testimonials-title" class="title">Colleagues' Thoughts</h2>
-  
-      <div class="notes">
-        <article
-          *ngFor="let t of items"
-          class="note"
-          [ngClass]="'note--' + t.variant"
-        >
-          <img
-            class="note__bg"
-            src="assets/img/paper-orange.png"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-          />
-  
-          <div class="note__content">
-            <p class="quote">“{{ t.quote }}”</p>
-  
-            <div class="footer">
-              <div>
-                <div class="name">{{ t.name }}</div>
-                <div class="role">{{ t.role }}</div>
-              </div>
-  
-              <a class="profile" [href]="t.profileUrl || '#'" target="_blank" rel="noreferrer">
-                Profile
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
+  <div class="inner">
+    <div class="eyebrow">
+      <img class="eyebrow__arrow" src="assets/img/Blue A.png" alt="" aria-hidden="true" />
+      <span>IN THEIR WORDS:</span>
     </div>
-  </section>
-  
+
+    <h2 id="testimonials-title" class="title">Colleagues' Thoughts</h2>
+
+    <div class="notes">
+      <article
+        *ngFor="let t of items"
+        class="note"
+        [ngClass]="'note--' + t.variant"
+      >
+        <img
+          class="note__bg"
+          src="assets/img/paper-orange.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+
+        <!-- Signatur-Overlay (kommt per Hover) -->
+        <img
+          class="note__sign"
+          src="assets/img/sign.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
+
+        <div class="note__content">
+          <p class="quote">“{{ t.quote }}”</p>
+
+          <div class="footer">
+            <div>
+              <div class="name">{{ t.name }}</div>
+              <div class="role">{{ t.role }}</div>
+            </div>
+
+            <a class="profile" [href]="t.profileUrl || '#'" target="_blank" rel="noreferrer">
+              Profile
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
