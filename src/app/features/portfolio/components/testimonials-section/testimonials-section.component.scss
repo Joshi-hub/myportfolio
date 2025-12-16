@@ -1,0 +1,170 @@
+:host {
+    display: block;
+  }
+  
+  /* SECTION */
+  .testimonials {
+    padding-bottom: 120px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: var(--bg-dark);
+    overflow: visible;
+  }
+  
+  .inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    overflow: visible; 
+  }
+  
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 8px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 5;
+  
+    span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--bg-dark);
+      opacity: 0.75;
+      white-space: nowrap;
+      line-height: 1;
+    }
+  }
+  
+  .eyebrow__arrow {
+    width: 78px;
+    height: auto;
+    flex: 0 0 auto;
+    transform: translateY(2px);
+  }
+  
+  .title {
+    text-align: right;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--bg-dark);
+    margin: 0 0 44px;
+    line-height: 1;
+  }
+  
+  @media (max-width: 900px) {
+    .title {
+      font-size: 2.4rem;
+    }
+  }
+  
+  .notes {
+    position: relative;
+    height: 340px; 
+    overflow: visible;
+  }
+  
+  .note {
+    position: absolute;
+    width: min(360px, 78vw);
+    border-radius: 18px;
+    overflow: visible;
+    filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.18));
+  }
+  
+  .note__bg {
+    display: block;
+    width: 100%;
+    height: auto;          
+    border-radius: 18px;  
+  }
+  
+  .note__content {
+    position: absolute;
+    inset: 0;
+    padding: 18px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .quote {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  
+  .footer {
+    margin-top: auto; 
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  
+  .name {
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 1.1;
+  }
+  
+  .role {
+    font-size: 11px;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+  
+  .profile {
+    font-size: 11px;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    white-space: nowrap;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .note--left {
+    left: 6%;
+    top: 92px;
+    transform: rotate(-7deg);
+    z-index: 2;
+  }
+  
+  .note--center {
+    left: 50%;
+    top: 64px;
+    transform: translateX(-50%) rotate(2deg);
+    z-index: 3;
+    width: min(390px, 84vw);
+  }
+  
+  .note--right {
+    right: 6%;
+    top: 92px;
+    transform: rotate(7deg);
+    z-index: 2;
+  }
+  
+  @media (max-width: 920px) {
+    .notes {
+      height: auto;
+      display: grid;
+      gap: 18px;
+    }
+  
+    .note {
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      transform: none !important;
+      width: 100%;
+    }
+  }
+  
