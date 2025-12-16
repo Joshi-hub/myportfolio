@@ -42,7 +42,31 @@
   width: 78px;
   height: auto;
   flex: 0 0 auto;
+  display: block;
   transform: translateY(2px);
+  will-change: clip-path;
+  clip-path: inset(0 0 0 100%);
+  animation: arrow-retract-loop 5s linear infinite;
+}
+
+@keyframes arrow-retract-loop {
+  0%   { clip-path: inset(0 0 0 100%); }
+
+  4%   { clip-path: inset(0 0 0 0); }
+
+  /* stehen lassen */
+  45%  { clip-path: inset(0 0 0 0); }
+
+  48%  { clip-path: inset(0 0 0 100%); }
+
+  100% { clip-path: inset(0 0 0 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow__arrow {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 .title {
