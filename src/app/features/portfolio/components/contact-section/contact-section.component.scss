@@ -2,8 +2,7 @@
   position: relative;
   padding: 6rem 1rem 2rem 1rem;
   color: var(--text-main);
-  
-  z-index: 0; 
+  z-index: 0;
 
   &::before {
     content: "";
@@ -12,10 +11,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; 
-    background-image: url('/assets/img/footer.png');
+    z-index: -1;
+    background-image: url("/assets/img/footer.png");
     background-size: cover;
-    background-position: bottom center; 
+    background-position: bottom center;
     background-repeat: no-repeat;
     transform: scaleY(-1);
   }
@@ -23,13 +22,13 @@
 
 .content-wrapper {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 4rem;
   margin-bottom: 4rem;
   margin-top: 4rem;
 
   @media (min-width: 900px) {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
   }
@@ -61,18 +60,58 @@
     line-height: 1.6;
     font-size: 1rem;
     margin-bottom: 3rem;
-    color: var(--text-main); 
+    color: var(--text-main);
   }
 
   .arrow-container {
     padding-left: 2rem;
+
+    img {
+      display: block;
+      will-change: clip-path;
+      clip-path: inset(0 0 0 100%);
+      animation: contact-arrow-wipe-rtl 5s linear infinite;
+    }
+  }
+}
+
+@keyframes contact-arrow-wipe-rtl {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  4% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  45% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  48% {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-info {
+    .arrow-container {
+      img {
+        animation: none;
+        clip-path: inset(0 0 0 0);
+      }
+    }
   }
 }
 
 .form-wrapper {
   flex: 1;
   position: relative;
-  background-color: transparent; 
+  background-color: transparent;
   padding: 1rem;
 
   .stamp-img {
@@ -103,7 +142,7 @@
     .form-input {
       background: transparent;
       border: none;
-      border-bottom: 1px solid var(--input-border); 
+      border-bottom: 1px solid var(--input-border);
       padding: 0.8rem 0;
       font-size: 1rem;
       color: var(--text-main);
@@ -126,10 +165,10 @@
   }
 
   .submit-btn {
-    align-self: flex-end; 
+    align-self: flex-end;
     background-color: #333;
     color: var(--white);
-    border: 1px solid #555; 
+    border: 1px solid #555;
     padding: 1rem 2.5rem;
     border-radius: 50px;
     font-size: 1rem;

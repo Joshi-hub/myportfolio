@@ -31,7 +31,7 @@
       font-size: 4rem;
       font-weight: 800;
       color: var(--bg-dark);
-      margin: 0;
+      margin-bottom: 10px;
       line-height: 1;
     }
 
@@ -40,8 +40,7 @@
       width: 100%;
       max-width: 250px;
       height: auto;
-      margin-top: -10px;
-      margin-left: -10px;
+      margin-bottom: 10px;
     }
   }
 
@@ -53,6 +52,48 @@
     }
   }
 }
+
+.title-underline {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+
+  will-change: clip-path;
+  clip-path: inset(0 100% 0 0);
+  animation: underline-wipe-ltr 5s linear infinite;
+}
+
+@keyframes underline-wipe-ltr {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  4% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  45% {
+    clip-path: inset(0 0 0 0);
+  }
+
+  48% {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-underline {
+    animation: none;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
 
 .divider {
   width: 100%;
