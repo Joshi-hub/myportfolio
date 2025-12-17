@@ -46,8 +46,9 @@
 
   .header-right {
     max-width: 450px;
+
     .section-description {
-      color: var(--text-placeholder); 
+      color: var(--text-placeholder);
       line-height: 1.6;
     }
   }
@@ -66,25 +67,11 @@
 }
 
 @keyframes underline-wipe-ltr {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  4% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  45% {
-    clip-path: inset(0 0 0 0);
-  }
-
-  48% {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  100% {
-    clip-path: inset(0 100% 0 0);
-  }
+  0%   { clip-path: inset(0 100% 0 0); }
+  4%   { clip-path: inset(0 0 0 0); }
+  45%  { clip-path: inset(0 0 0 0); }
+  48%  { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 100% 0 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,6 +81,40 @@
   }
 }
 
+/* Laptop float – nur Laptop animiert */
+.header-icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+
+  animation: laptop-float 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes laptop-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-25px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-icon {
+    animation: none;
+  }
+}
+
+.header-images {
+  position: relative;
+}
+
+/* Sticker liegen über dem Laptop (nicht animiert) */
+.stickers-img {
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  left: 0;
+}
 
 .divider {
   width: 100%;
@@ -118,14 +139,95 @@
 .project-image-wrapper {
   flex: 1.5;
   position: relative;
-  
+  overflow: hidden;
+  border-radius: 20px;
+
+  // Overlay (abdunkeln)
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 60%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &:hover::after,
+  &:focus-within::after {
+    opacity: 1;
+  }
+
+  &:hover .project-img,
+  &:focus-within .project-img {
+    transform: scale(1.06);
+  }
+
+  &:hover .project-overlay-btn,
+  &:focus-within .project-overlay-btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .project-img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
+    border-radius: inherit;
+    transform: scale(1);
+    transition: transform 0.35s ease;
+    will-change: transform;
   }
 }
+
+/* ✅ Button-Style wie about__cta + rechts unten */
+.project-overlay-btn {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+
+  opacity: 0;
+  pointer-events: none;
+
+  display: inline-block;
+  text-decoration: none;
+
+  padding: 0.65rem 1.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--bg-dark);
+  background: var(--white);
+  color: var(--bg-dark);
+  font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 2px 6px 0 #000;
+  cursor: pointer;
+
+  transition: opacity .25s ease,
+              background-color .2s ease,
+              box-shadow .2s ease,
+              transform .2s ease,
+              color .2s ease;
+}
+
+.project-overlay-btn:hover {
+  background-color: #FF834F;
+  box-shadow: 0 0 0 transparent;
+  transform: translateY(6px);
+}
+
+/* Optional: auf Touch-Geräten Button sichtbar lassen */
+@media (hover: none) {
+  .project-overlay-btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .project-image-wrapper::after {
+    opacity: 1;
+  }
+}
+
 
 .project-content {
   flex: 1;
@@ -137,7 +239,7 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    
+
     .project-title {
       font-size: 2.5rem;
       font-weight: 800;
@@ -192,7 +294,7 @@
       background-color: var(--bg-dark);
       color: var(--white);
       border: 1px solid var(--bg-dark);
-      
+
       &:hover {
         background-color: var(--white);
         color: var(--bg-dark);

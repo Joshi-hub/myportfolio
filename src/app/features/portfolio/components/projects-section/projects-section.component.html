@@ -1,61 +1,78 @@
 <section class="projects-section" id="projects">
-    <div class="container">
-      
-      <div class="section-header">
-        <div class="header-left">
-          <span class="section-tag">My work</span>
-          <h2 class="section-title">Projects</h2>
-          <img src="assets/img/linea naranja 3.png" alt="decoration" class="title-underline">
-          <p>Encourage people to take a look and interact with your projects.
-            Highlight your approach to creating responsive, user-friendly projects with efficient code.
-          </p>
-        </div>
-        
-        <div class="header-right">
-            <img src="assets/img/Laptop.png" alt="code icon" class="header-icon">
-            <h2>Join</h2>
-          <p class="section-description">
-            Explore a selection of my best work. Here you'll find interactive applications 
-            and games that showcase my skills in frontend development.
-          </p>
-        </div>
+  <div class="container">
+
+    <div class="section-header">
+      <div class="header-left">
+        <span class="section-tag">My work</span>
+        <h2 class="section-title">Projects</h2>
+        <img src="assets/img/linea naranja 3.png" alt="decoration" class="title-underline">
+        <p>
+          Encourage people to take a look and interact with your projects.
+          Highlight your approach to creating responsive, user-friendly projects with efficient code.
+        </p>
       </div>
-  
-      <div class="divider"></div>
-  
-      <div class="projects-list">
-        <div class="project-card" *ngFor="let project of projects; let i = index" [class.reverse-layout]="i % 2 !== 0">
-          
-          <div class="project-image-wrapper">
-            <img [src]="project.image" [alt]="project.title" class="project-img">
-            <div class="image-border"></div>
-          </div>
-  
-          <div class="project-content">
-            
-            <div class="title-row">
-              <h3 class="project-title">{{ project.title }}</h3>
-              <span class="project-number">0{{ i + 1 }}</span>
-            </div>
-            
-            <div class="tech-stack">
-              <span *ngFor="let tech of project.techStack; let last = last">
-                {{ tech.name }} <span *ngIf="!last" class="separator">|</span>
-              </span>
-              </div>
-  
-            <p class="project-description">
-              {{ project.description }}
-            </p>
-            
-            <div class="action-buttons">
-              <a [href]="project.link" target="_blank" class="btn btn-primary">Play test</a>
-              <a [href]="project.github" target="_blank" class="btn btn-secondary">GitHub</a>
-            </div>
-          </div>
-  
+
+      <div class="header-right">
+        <div class="header-images">
+          <img src="assets/img/Laptop.png" alt="code icon" class="header-icon">
+          <img src="assets/img/Stickers.png" alt="Stickers" class="stickers-img">
         </div>
+
+        <h2>Join</h2>
+        <p class="section-description">
+          Explore a selection of my best work. Here you'll find interactive applications
+          and games that showcase my skills in frontend development.
+        </p>
       </div>
-  
     </div>
-  </section>
+
+    <div class="divider"></div>
+
+    <div class="projects-list">
+      <div class="project-card"
+           *ngFor="let project of projects; let i = index"
+           [class.reverse-layout]="i % 2 !== 0">
+
+        <div class="project-image-wrapper">
+          <img [src]="project.image" [alt]="project.title" class="project-img">
+
+          <!-- Button im Bild (erscheint beim Hover) -->
+          <a class="project-overlay-btn"
+             [href]="project.link"
+             target="_blank"
+             rel="noopener">
+            Project details
+          </a>
+
+          <div class="image-border"></div>
+        </div>
+
+        <div class="project-content">
+
+          <div class="title-row">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <span class="project-number">0{{ i + 1 }}</span>
+          </div>
+
+          <div class="tech-stack">
+            <span *ngFor="let tech of project.techStack; let last = last">
+              {{ tech.name }} <span *ngIf="!last" class="separator">|</span>
+            </span>
+          </div>
+
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+
+          <div class="action-buttons">
+            <a [href]="project.link" target="_blank" class="btn btn-primary">Play test</a>
+            <a [href]="project.github" target="_blank" class="btn btn-secondary">GitHub</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
