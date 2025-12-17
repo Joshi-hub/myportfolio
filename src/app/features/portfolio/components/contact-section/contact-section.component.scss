@@ -185,26 +185,34 @@
 
   .submit-btn {
     align-self: flex-end;
-    background-color: transparent;
-    color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    padding: 0.55rem 2.2rem;
+    padding: 0.65rem 1.9rem;
     border-radius: 999px;
+    border: 1px solid var(--bg-dark);
+    background: var(--white);
+    color: var(--bg-dark);
     font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 2px 6px 0 #000;
     cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     margin-top: 0.6rem;
 
     &:hover:not([disabled]) {
-      background-color: var(--accent-orange);
-      border-color: var(--accent-orange);
-      color: var(--white);
-      transform: translateY(-2px);
+      background-color: #ff834f;
+      box-shadow: 0 0 0 transparent;
+      transform: translateY(6px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-orange);
+      outline-offset: 4px;
     }
 
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
+      transform: none;
     }
   }
 }
