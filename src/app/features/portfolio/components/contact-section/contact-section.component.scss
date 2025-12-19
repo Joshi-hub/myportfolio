@@ -183,6 +183,71 @@
     }
   }
 
+  .policy-row {
+    margin-top: 0.2rem;
+  }
+  
+  .policy {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 10px;
+    align-items: start;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .policy input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .checkbox-ui {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.02);
+    margin-top: 2px;
+    position: relative;
+  }
+  
+  .policy input:checked + .checkbox-ui {
+    border-color: var(--accent-orange);
+    background: rgba(255, 131, 79, 0.25);
+  }
+  
+  .policy input:checked + .checkbox-ui::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid var(--accent-orange);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .policy-text {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    opacity: 0.85;
+    color: var(--text-main);
+  }
+  
+  .policy-text a {
+    color: var(--text-main);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .policy-text a:hover {
+    color: var(--accent-orange);
+    opacity: 1;
+  }  
+
   .submit-btn {
     align-self: flex-end;
     padding: 0.65rem 1.9rem;

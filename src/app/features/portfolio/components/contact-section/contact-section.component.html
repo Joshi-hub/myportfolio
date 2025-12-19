@@ -1,32 +1,38 @@
 <section class="contact-section" id="contact">
-  
   <div class="torn-paper-top"></div>
 
   <div class="container">
-    
     <div class="content-wrapper">
-      
       <div class="contact-info">
         <h4 class="section-tag">Contact</h4>
-        <h2 class="main-title">Ready to work <br> together?</h2>
-        
+        <h2 class="main-title">
+          Ready to work <br />
+          together?
+        </h2>
+
         <p class="description">
-          Puntual, clean code and efficient delivery is my promise.
-          Let's create something amazing together.
-          (Hier deinen Text einfügen)
+          Puntual, clean code and efficient delivery is my promise. Let's create
+          something amazing together. (Hier deinen Text einfügen)
         </p>
 
         <div class="arrow-container">
-          <img src="assets/img/Line.png" alt="arrow" class="arrow-img">
+          <img src="assets/img/Line.png" alt="arrow" class="arrow-img" />
         </div>
       </div>
 
       <div class="form-wrapper">
-        
-        <img src="assets/img/stamp.png" alt="Stamp" class="stamp-img">
+        <img src="assets/img/stamp.png" alt="Stamp" class="stamp-img" />
 
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
-          
+        <form
+          (ngSubmit)="onSubmit(contactForm)"
+          #contactForm="ngForm"
+          class="contact-form"
+          novalidate
+        >
+          <p class="error-text" *ngIf="formStatus !== 'idle'">
+            {{ formMessage }}
+          </p>
+
           <div class="form-group">
             <label for="name">What's your name?</label>
             <input
@@ -34,10 +40,20 @@
               id="name"
               name="name"
               [(ngModel)]="contactData.name"
+              #nameRef="ngModel"
               placeholder="Name"
               required
               class="form-input"
             />
+
+            <p
+              class="error-text"
+              *ngIf="
+                nameRef.invalid && (nameRef.touched || contactForm.submitted)
+              "
+            >
+              Please enter your name.
+            </p>
           </div>
 
           <div class="form-group">
@@ -47,10 +63,21 @@
               id="email"
               name="email"
               [(ngModel)]="contactData.email"
-              placeholder="Email"
+              #emailRef="ngModel"
               required
+              email
+              placeholder="Email"
               class="form-input"
             />
+
+            <p
+              class="error-text"
+              *ngIf="
+                emailRef.invalid && (emailRef.touched || contactForm.submitted)
+              "
+            >
+              Please enter a valid email address.
+            </p>
           </div>
 
           <div class="form-group">
@@ -59,11 +86,52 @@
               id="message"
               name="message"
               [(ngModel)]="contactData.message"
+              #messageRef="ngModel"
               placeholder="Hello, I need a website..."
               rows="4"
               required
               class="form-input textarea"
             ></textarea>
+
+            <p
+              class="error-text"
+              *ngIf="
+                messageRef.invalid &&
+                (messageRef.touched || contactForm.submitted)
+              "
+            >
+              Please enter a message.
+            </p>
+          </div>
+
+          <div class="policy-row">
+            <label class="policy">
+              <input
+                type="checkbox"
+                id="privacy"
+                name="privacyAccepted"
+                [(ngModel)]="contactData.privacyAccepted"
+                #privacyRef="ngModel"
+                required
+              />
+              <span class="checkbox-ui" aria-hidden="true"></span>
+
+              <span class="policy-text">
+                I've read the
+                <a routerLink="/imprint">privacy policy</a>
+                and agree to the processing of my data as outlined.
+              </span>
+            </label>
+
+            <p
+              class="error-text"
+              *ngIf="
+                privacyRef.invalid &&
+                (privacyRef.touched || contactForm.submitted)
+              "
+            >
+              Please accept the privacy policy.
+            </p>
           </div>
 
           <button
@@ -73,15 +141,12 @@
           >
             Say hello :)
           </button>
-
         </form>
       </div>
-
     </div>
 
     <div class="footer-wrapper">
       <app-footer></app-footer>
     </div>
-
   </div>
 </section>
