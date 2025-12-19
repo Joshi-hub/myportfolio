@@ -54,6 +54,11 @@
   }
 }
 
+.footer-logo:hover {
+  filter: brightness(0) saturate(100%) invert(41%) sepia(94%) saturate(2479%)
+    hue-rotate(0deg) brightness(102%) contrast(101%);
+}
+
 .legal-link {
   text-decoration: none;
   font-size: 0.9rem;
@@ -69,40 +74,167 @@
   }
 }
 
-.footer-right {
-  display: flex;
+.legal-link--circle {
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  overflow: visible; 
 }
 
-.social-icons {
+.legal-link--circle .nav-text {
+  position: relative;
+  z-index: 2;
+}
+
+.legal-link--circle .hover-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: auto;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.35s ease-out, opacity 0.2s ease-out;
+}
+
+.legal-link--circle:hover .hover-img,
+.legal-link--circle:focus-visible .hover-img {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+}
+
+.legal-link--circle:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 4px;
+}
+
+.footer-links {
   display: flex;
-  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 
-  a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  gap: clamp(3rem, 8vw, 7rem);
+  padding-bottom: 0.2rem;
 
-    &:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.35);
-      background-color: rgba(255, 255, 255, 0.06);
-    }
-
-    img {
-      width: 18px;
-      height: 18px;
-      display: block;
-    }
+  @media (max-width: 520px) {
+    flex-wrap: wrap;
+    gap: 1.4rem 2.2rem;
   }
 }
 
-.footer-logo:hover {
-  filter: brightness(0) saturate(100%) invert(41%) sepia(94%) saturate(2479%)
-    hue-rotate(0deg) brightness(102%) contrast(101%);
+.footer-badge {
+  position: relative;
+  width: 150px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--text-main);
+  text-decoration: none;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+
+  overflow: visible;
+  transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer-badge:hover,
+.footer-badge:focus-visible {
+  width: 250px;
+}
+
+.footer-badge__icon {
+  position: absolute;
+  top: -30px;
+  left: 5px;
+  width: 28px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.footer-badge:hover .footer-badge__icon,
+.footer-badge:focus-visible .footer-badge__icon {
+  opacity: 1;
+  animation: rollFooterIcon 0.3s linear forwards;
+}
+
+@keyframes rollFooterIcon {
+  0% {
+    left: 125px;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 225px;
+    transform: rotate(360deg);
+  }
+}
+
+.footer-badge__text {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-badge__text--initial {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer-badge__text--hover {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.footer-badge:hover .footer-badge__text--initial,
+.footer-badge:focus-visible .footer-badge__text--initial {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.footer-badge:hover .footer-badge__text--hover,
+.footer-badge:focus-visible .footer-badge__text--hover {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.footer-badge:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-badge,
+  .footer-badge__text {
+    transition: none;
+  }
+
+  .footer-badge:hover,
+  .footer-badge:focus-visible {
+    width: 150px;
+  }
+
+  .footer-badge:hover .footer-badge__icon,
+  .footer-badge:focus-visible .footer-badge__icon {
+    animation: none;
+    opacity: 1;
+    left: 5px;
+    transform: none;
+  }
 }
