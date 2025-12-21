@@ -8,7 +8,9 @@ import { SkillsSectionComponent } from './components/skills-section/skills-secti
 import { ProjectsSectionComponent } from './components/projects-section/projects-section.component';
 import { ContactSectionComponent } from './components/contact-section/contact-section.component';
 import { SharedModule } from '../../shared/shared.module';
-import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component'; 
+import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
+import { ProjectDetailComponent } from './pages/project-detail/project-detail.component'; 
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { TestimonialsSectionComponent } from './components/testimonials-section/
     SkillsSectionComponent,
     ProjectsSectionComponent,
     ContactSectionComponent,
-    TestimonialsSectionComponent
+    TestimonialsSectionComponent,
+    ProjectDetailComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   exports: [
     PortfolioPageComponent  

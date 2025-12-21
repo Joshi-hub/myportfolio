@@ -21,7 +21,12 @@
           <div class="header-images">
             <div class="laptop-wrapper">
               <img src="assets/img/Laptop.png" alt="Laptop" class="header-icon" />
-              <a class="laptop-overlay-btn" href="#" aria-label="Open featured project details">
+
+              <a
+                class="laptop-overlay-btn"
+                [routerLink]="['/projects', 'join']"
+                aria-label="Open featured project details"
+              >
                 Project details
               </a>
             </div>
@@ -30,7 +35,10 @@
           </div>
 
           <div class="featured-text">
-            <h2>Join</h2>
+            <a class="featured-title-link" [routerLink]="['/projects', 'join']">
+              <h2>Join</h2>
+            </a>
+
             <p class="section-description">
               Explore a selection of my best work. Here you'll find interactive applications
               and games that showcase my skills in frontend development.
@@ -44,9 +52,11 @@
       <div class="project-card" *ngFor="let project of projects; let i = index">
         <div class="project-image-wrapper">
           <img [src]="project.image" [alt]="project.title" class="project-img" />
-          <a class="project-overlay-btn" [href]="project.link" target="_blank" rel="noopener">
+
+          <a class="project-overlay-btn" [routerLink]="['/projects', project.id]">
             Project details
           </a>
+
           <div class="image-border"></div>
         </div>
 

@@ -13,20 +13,20 @@ type Project = {
   styleUrls: ['./projects-section.component.scss']
 })
 export class ProjectsSectionComponent {
-  projects: Project[] = [
+  projects = [
     {
+      id: 'el-pollo-loco',
       title: 'El Pollo Loco',
-      description:
-        'A jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
-      image: 'assets/img/Pollo.png',
-      link: '#'
+      description: '...',
+      image: 'assets/img/Pollo.png'
     },
     {
-      title: 'DABubble',
-      description:
-        'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-      image: 'assets/img/join.jpg',
-      link: '#'
-    }
+      id: 'join',
+      title: 'Join',
+      description: '...',
+      image: 'assets/img/join.jpg'
+    },
   ];
+  
+  
 }
