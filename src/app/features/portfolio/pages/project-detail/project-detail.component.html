@@ -1,7 +1,57 @@
 <section class="project-detail">
-    <button type="button" class="back-btn" (click)="goBack()">← Go Back</button>
-  
-    <h1>Project Detail</h1>
-    <p>Project ID: {{ projectId }}</p>
-  </section>
-  
+  <app-header class="header--on-dark"></app-header>
+  <div class="project-detail__wrap">
+    <div class="project-detail__left">
+      <button type="button" class="back-btn" (click)="goBack()">← Go Back</button>
+
+      <h1 class="project-title">{{ project?.title }}</h1>
+      <img
+        class="project-title-underline"
+        src="assets/img/19_Line.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <h3 class="section-heading">Description</h3>
+      <p class="section-text">{{ project?.description }}</p>
+
+      <h3 class="section-heading">Implementation Details</h3>
+      <p class="section-text">{{ project?.implementationDetails }}</p>
+
+      <div class="duration-row">
+        <span class="duration-label">Duration</span>
+        <span class="duration-value">{{ project?.duration }}</span>
+      </div>
+
+      <div class="tech-row">
+        <span class="tech-chip">
+          <img src="assets/img/javascript.png" alt="JavaScript" />
+          <span>JavaScript</span>
+        </span>
+        <span class="tech-chip">
+          <img src="assets/img/html.png" alt="HTML" />
+          <span>HTML</span>
+        </span>
+        <span class="tech-chip">
+          <img src="assets/img/css.png" alt="CSS" />
+          <span>CSS</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="project-detail__right">
+      <div class="project-image">
+        <img [src]="project?.image" [alt]="project?.title" />
+      </div>
+
+      <div class="action-row">
+        <a class="btn" [href]="project?.githubUrl" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" [href]="project?.liveTestUrl" target="_blank" rel="noopener">Live Test</a>
+      </div>
+
+      <a class="next-project" [routerLink]="['/projects', nextProjectId]">
+        Next Project <span class="next-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
