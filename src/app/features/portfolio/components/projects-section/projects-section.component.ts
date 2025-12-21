@@ -1,37 +1,32 @@
 import { Component } from '@angular/core';
 
+type Project = {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+};
+
 @Component({
   selector: 'app-projects-section',
   templateUrl: './projects-section.component.html',
   styleUrls: ['./projects-section.component.scss']
 })
 export class ProjectsSectionComponent {
-
-  projects = [
+  projects: Project[] = [
     {
       title: 'El Pollo Loco',
-      description: 'A jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
-      techStack: [
-        { name: 'HTML', icon: 'assets/img/html.png' },
-        { name: 'CSS', icon: 'assets/img/css.png' },
-        { name: 'JavaScript', icon: 'assets/img/javascript.png' }
-      ],
-      image: 'assets/img/Pollo.png', 
-      link: '#',   
-      github: '#'  
+      description:
+        'A jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
+      image: 'assets/img/Pollo.png',
+      link: '#'
     },
     {
-      title: 'El Pollo Loco',
-      description: 'A jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
-      techStack: [
-        { name: 'HTML', icon: 'assets/img/html.png' },
-        { name: 'CSS', icon: 'assets/img/css.png' },
-        { name: 'JavaScript', icon: 'assets/img/javascript.png' }
-      ],
-      image: 'assets/img/join.jpg', 
-      link: '#',   
-      github: '#'  
-    },
+      title: 'DABubble',
+      description:
+        'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+      image: 'assets/img/join.jpg',
+      link: '#'
+    }
   ];
-
 }
