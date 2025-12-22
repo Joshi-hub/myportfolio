@@ -11,6 +11,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component'; 
 import { RouterModule } from '@angular/router';
+import { LegacyNoticeComponent } from './pages/legacy-notice/legacy-notice.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     ProjectsSectionComponent,
     ContactSectionComponent,
     TestimonialsSectionComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    LegacyNoticeComponent
   ],
   imports: [
     CommonModule,

@@ -27,6 +27,6 @@ export class ProjectsSectionComponent {
       description:
         'A Kanban-style project management tool inspired by Trello. Create tasks, assign users, manage categories and keep track of your workflow in a clear board view.',
       image: 'assets/img/join.jpg'
-    }
+    },
   ];
 }

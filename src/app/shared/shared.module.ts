@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
-import { HeaderComponent } from '../core/layout/header/header.component'; 
+import { HeaderComponent } from '../core/layout/header/header.component';
 import { FooterComponent } from '../core/layout/footer/footer.component';
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FooterComponent } from '../core/layout/footer/footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     SectionTitleComponent,
