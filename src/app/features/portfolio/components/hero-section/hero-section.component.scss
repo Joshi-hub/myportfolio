@@ -6,7 +6,7 @@
   background-size: cover;
   background-position: bottom;
   background-blend-mode: overlay;
-  color: var(--white, #fff);
+  color: var(--white);
 }
 
 .hero__inner {
@@ -33,7 +33,7 @@
 }
 
 .hero__social-img:hover {
-  background-color: blue;
+  background-color: var(--highlight-blue);
   border-radius: 999px;
   transform: scale(1.2);
 }
@@ -88,7 +88,7 @@
 .hero__polaroid-caption {
   position: absolute;
   bottom: 15px;
-  color: #333;
+  color: var(--bg-dark);
   font-family: "Courier New", monospace;
   font-size: 14px;
   font-weight: 700;
@@ -100,15 +100,15 @@
   display: block;
   padding: 12px 40px;
   border-radius: 999px;
-  border: 1px solid var(--white, #fff);
+  border: 1px solid var(--white);
   background: transparent;
-  color: var(--white, #fff);
+  color: var(--white);
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 4px 4px 0 var(--white, #fff);
+  box-shadow: 4px 4px 0 var(--white);
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -118,9 +118,9 @@
 }
 
 .hero__cta:hover {
-  background-color: #ff834f;
-  border-color: #ff834f;
-  color: #000;
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--bg-dark);
   box-shadow: 0 0 0 transparent;
   transform: translate(4px, 4px);
 }
@@ -135,7 +135,7 @@
   cursor: default;
   z-index: 10;
   border-radius: 999px;
-  border: 2px solid var(--white, #fff);
+  border: 2px solid var(--white);
   transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -148,7 +148,7 @@
   min-width: 140px;
   height: 38px;
   padding: 0 18px;
-  border: 1px solid var(--white, #fff);
+  border: 1px solid var(--white);
   border-radius: 999px;
   display: flex;
   align-items: center;
@@ -159,7 +159,7 @@
 }
 
 .hero__badge-container:hover .hero__text-mask {
-  background: rgba(255, 255, 255, 0.1);
+  background: color-mix(in srgb, var(--white) 10%, transparent);
 }
 
 .hero__hand-img {
@@ -196,7 +196,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white, #fff);
+  color: var(--white);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -223,7 +223,7 @@
 .hero__badge-container:hover .hero__badge-text--hover {
   opacity: 1;
   transform: translateX(0);
-  background: blue;
+  background: var(--highlight-blue);
   border-radius: 999px;
 }
 
@@ -247,13 +247,13 @@
 .hero__char::before {
   content: attr(data-upper);
   display: inline-block;
-  color: var(--white, #fff);
+  color: var(--white);
   transition: color 0.25s ease, transform 0.25s ease;
   transform: translateY(0);
 }
 
 .hero__char:hover::before {
   content: attr(data-lower);
-  color: var(--primary-blue, #9747FF);
+  color: var(--highlight-1);
   transform: translateY(0);
 }

@@ -1,141 +1,140 @@
 .legacy-notice {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .legacy-notice__container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 120px;
-  }
-  
-  .legacy-notice__top {
-    position: relative;
-    background: url("/assets/img/skill-bg.png") no-repeat center bottom;
-    background-size: cover;
-    padding-bottom: 168px;
-  }
-  
-  :host ::ng-deep app-header.legacy-notice__header * {
-    color: #fff !important;
-  }
-  
-  .legacy-notice__top-inner {
-    position: relative;
-    z-index: 1;
-    padding: 100px 120px 50px;
-  }
-  
-  .back-link {
-    appearance: none;
-    border: 0;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    font-weight: 800;
-    color: #ff834f;
-    margin-bottom: 12px;
-  }
-  
-  .legacy-notice__title {
-    margin: 0;
-    font-size: 42px;
-    font-weight: 900;
-    letter-spacing: 0.2px;
-  }
-  
-  .legacy-notice__content {
-    background: #fff;
-    padding: 26px 0 44px;
-  }
-  
-  .legacy-notice__h2,
-  .legacy-notice__h3 {
-    margin: 0 0 8px;
-    color: #1d4ed8;
-    font-weight: 900;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-  }
-  
-  .legacy-notice__h2 {
-    font-size: 14px;
-    margin-top: 2px;
-  }
-  
-  .legacy-notice__h3 {
-    font-size: 14px;
-    margin-top: 16px;
-  }
-  
-  .legacy-notice__p {
-    margin: 0 0 10px;
-    max-width: 760px;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #2a2a2a;
-  }
-  
-  .legacy-notice__meta {
-    margin-top: 14px;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.55);
-    font-weight: 700;
-  }
-  
-  .legacy-notice__footer {
-    margin-top: auto;
-  }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.legacy-notice__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+.legacy-notice__top {
+  position: relative;
+  background: url("/assets/img/skill-bg.png") no-repeat center bottom;
+  background-size: cover;
+  padding-bottom: 168px;
+}
+
+:host ::ng-deep app-header.legacy-notice__header * {
+  color: var(--white) !important;
+}
+
+.legacy-notice__top-inner {
+  position: relative;
+  z-index: 1;
+  padding: 100px 120px 50px;
+}
+
+.back-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--accent-orange);
+  margin-bottom: 12px;
+}
+
+.legacy-notice__title {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.legacy-notice__content {
+  background: var(--white);
+  padding: 26px 0 44px;
+}
+
+.legacy-notice__h2,
+.legacy-notice__h3 {
+  margin: 0 0 8px;
+  color: var(--highlight-blue);
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.legacy-notice__h2 {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.legacy-notice__h3 {
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.legacy-notice__p {
+  margin: 0 0 10px;
+  max-width: 760px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--bg-dark);
+}
+
+.legacy-notice__meta {
+  margin-top: 14px;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--bg-dark) 55%, transparent);
+  font-weight: 700;
+}
+
+.legacy-notice__footer {
+  margin-top: auto;
+}
 
 :host ::ng-deep app-footer.legacy-notice__footer {
-    background: #fff; 
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--white); 
+  border-top: 1px solid color-mix(in srgb, var(--bg-dark) 8%, transparent);
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer,
+:host ::ng-deep app-footer.legacy-notice__footer * {
+  color: var(--bg-dark) !important; 
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer a {
+  color: var(--bg-dark) !important;
+  text-decoration-color: color-mix(in srgb, var(--bg-dark) 35%, transparent);
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer a:hover,
+:host ::ng-deep app-footer.legacy-notice__footer a:focus-visible {
+  color: var(--accent-orange) !important; 
+  text-decoration-color: var(--accent-orange);
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer svg {
+  color: var(--bg-dark) !important;
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer svg * {
+  stroke: currentColor !important;
+  fill: currentColor !important;
+}
+
+
+@media (max-width: 1100px) {
+  .legacy-notice__container {
+    padding: 0 40px;
   }
-  
-  :host ::ng-deep app-footer.legacy-notice__footer,
-  :host ::ng-deep app-footer.legacy-notice__footer * {
-    color: #111827 !important; 
+}
+
+@media (max-width: 700px) {
+  .legacy-notice__container {
+    padding: 0 20px;
   }
-  
-  :host ::ng-deep app-footer.legacy-notice__footer a {
-    color: #111827 !important;
-    text-decoration-color: rgba(17, 24, 39, 0.35);
+
+  .legacy-notice__top-inner {
+    padding: 52px 0 34px;
   }
-  
-  :host ::ng-deep app-footer.legacy-notice__footer a:hover,
-  :host ::ng-deep app-footer.legacy-notice__footer a:focus-visible {
-    color: #ff834f !important; 
-    text-decoration-color: #ff834f;
+
+  .legacy-notice__title {
+    font-size: 34px;
   }
-  
-  :host ::ng-deep app-footer.legacy-notice__footer svg {
-    color: #111827 !important;
-  }
-  
-  :host ::ng-deep app-footer.legacy-notice__footer svg * {
-    stroke: currentColor !important;
-    fill: currentColor !important;
-  }
-  
-  
-  @media (max-width: 1100px) {
-    .legacy-notice__container {
-      padding: 0 40px;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .legacy-notice__container {
-      padding: 0 20px;
-    }
-  
-    .legacy-notice__top-inner {
-      padding: 52px 0 34px;
-    }
-  
-    .legacy-notice__title {
-      font-size: 34px;
-    }
-  }
-  
+}

@@ -1,17 +1,28 @@
 :root {
-  --black: #0E1013;
-  --white: #f8f9fa;
-  --bg-dark: #141414;     
-  --bg-darker: #0E161F;   
-  --primary-purple: #9747FF; 
-  --accent-orange: #FF834F;  
-  --success-green: #37C362;  
-  --highlight-blue: #298BF5; 
-  --text-main: #ffffff;
-  --text-secondary: #B0B0B0; 
-  --text-placeholder: #666666;
-  --border-color: #ffffff;
-  --input-border: #444444;
+  --base-light: #F8F9FA;
+  --base-dark: #0E1013;
+  --highlight-1: #F7C518;
+  --highlight-2: #3355FF;
+  --highlight-3: #F87A55;
+
+  --white: var(--base-light);
+  --black: var(--base-dark);
+
+  --bg-dark: var(--base-dark);
+  --bg-darker: var(--base-dark);
+
+  --primary-blue: var(--highlight-2);
+  --primary-purple: var(--highlight-2);
+  --highlight-blue: var(--highlight-2);
+  --logo-hover: var(--highlight-1);
+  --accent-orange: var(--highlight-3);
+
+  --text-main: var(--base-light);
+  --text-secondary: var(--base-light);
+  --text-placeholder: var(--base-light);
+
+  --border-color: var(--base-light);
+  --input-border: var(--base-light);
 }
 
 .bricolage-grotesque {
@@ -79,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-bottom: 1rem;
-  color: var(--text-secondary); 
+  opacity: 0.85;
 }
 
 .container {

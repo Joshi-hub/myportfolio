@@ -7,7 +7,7 @@
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #000;
+  color: var(--bg-dark);
 }
 
 .section-header {
@@ -57,7 +57,6 @@ h2 {
   }
 
   .section-description {
-    color: var(--text-placeholder);
     line-height: 1.6;
   }
 }
@@ -125,7 +124,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.45), rgba(0,0,0,0) 60%);
+    background: linear-gradient(to top, color-mix(in srgb, var(--bg-dark) 45%, transparent), transparent 60%);
     opacity: 0;
     transition: opacity 0.25s ease;
     z-index: 1;
@@ -177,7 +176,6 @@ h2 {
 
 .featured-text {
   .section-description {
-    color: var(--text-placeholder);
     line-height: 1.6;
   }
 }
@@ -216,7 +214,7 @@ h2 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0) 60%);
+    background: linear-gradient(to top, color-mix(in srgb, var(--bg-dark) 55%, transparent), transparent 60%);
     opacity: 0;
     transition: opacity 0.25s ease;
     z-index: 1;
@@ -254,7 +252,7 @@ h2 {
 .image-border {
   position: absolute;
   inset: 0;
-  border: 2px solid rgba(0, 0, 0, 0.08);
+  border: 2px solid color-mix(in srgb, var(--bg-dark) 8%, transparent);
   border-radius: inherit;
   z-index: 0;
   pointer-events: none;
@@ -277,7 +275,7 @@ h2 {
   color: var(--bg-dark);
   font-size: 0.95rem;
   font-weight: 700;
-  box-shadow: 2px 6px 0 #000;
+  box-shadow: 2px 6px 0 var(--bg-dark);
   cursor: pointer;
   transition: opacity .25s ease,
               background-color .2s ease,
@@ -288,7 +286,7 @@ h2 {
 
 .laptop-overlay-btn:hover,
 .project-overlay-btn:hover {
-  background-color: #FF834F;
+  background-color: var(--accent-orange);
   box-shadow: 0 0 0 transparent;
   transform: translateY(6px);
 }
@@ -309,7 +307,6 @@ h2 {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: var(--text-placeholder);
 }
 
 @media (hover: none) {
