@@ -1,4 +1,6 @@
 <header class="header">
+  <input id="menuToggle" class="menu-toggle" type="checkbox" />
+
   <div class="header-inner">
     <a href="#" class="logo">
       <img src="assets/img/Logo.png" alt="Logo" class="logo-img" />
@@ -6,47 +8,70 @@
 
     <nav class="nav">
       <a href="#about" class="nav-link nav-link--circle">
-        <span class="nav-text">{{ language.t('nav').about }}</span>
+        <span class="nav-text">About</span>
         <img src="assets/img/B.1 1.svg" alt="" class="hover-img" />
       </a>
 
       <a href="#skills" class="nav-link nav-link--circle">
-        <span class="nav-text">{{ language.t('nav').skills }}</span>
+        <span class="nav-text">Skills</span>
         <img src="assets/img/B.1 2.svg" alt="" class="hover-img" />
       </a>
 
       <a href="#projects" class="nav-link nav-link--circle">
-        <span class="nav-text">{{ language.t('nav').projects }}</span>
+        <span class="nav-text">Projects</span>
         <img src="assets/img/B.1 4.png" alt="" class="hover-img" />
       </a>
 
       <a href="#contact" class="nav-link nav-link--circle">
-        <span class="nav-text">{{ language.t('nav').contact }}</span>
+        <span class="nav-text">Contact</span>
         <img src="assets/img/B.1 3.png" alt="" class="hover-img" />
       </a>
     </nav>
 
-    <div class="lang-switch" [ngClass]="langSwitchClasses">
-      <button
-        class="lang-btn lang-btn--en"
-        type="button"
-        (click)="setLanguage('en')"
-      >
-        <span class="lang-text">EN</span>
-        <img src="assets/img/Group 62.png" class="lang-hover-img" alt="" />
-      </button>
-
+    <div class="lang-switch">
+      <button class="lang-btn" type="button">EN</button>
       <img src="assets/img/Group 61.png" alt="" class="lang-divider" />
-      <img src="assets/img/Group 61u.png" alt="" class="lang-globe" />
+      <button class="lang-btn" type="button">DE</button>
+    </div>
 
-      <button
-        class="lang-btn lang-btn--de"
-        type="button"
-        (click)="setLanguage('de')"
-      >
-        <span class="lang-text">DE</span>
-        <img src="assets/img/Group 63.png" class="lang-hover-img" alt="" />
-      </button>
+    <label class="burger-btn" for="menuToggle" aria-label="Menu">
+      <img src="assets/img/burger.png" alt="" class="burger-icon" />
+      <span class="burger-close" aria-hidden="true"></span>
+    </label>
+  </div>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <img src="assets/img/Logo.png" alt="Logo" class="mobile-menu__logo" />
+    <label class="mobile-menu__backdrop" for="menuToggle"></label>
+    <div class="mobile-menu__panel">
+      <label class="mobile-close" for="menuToggle" aria-label="Close menu"></label>
+
+      <nav class="mobile-nav">
+        <a href="#about" class="mobile-nav__link">About</a>
+        <a href="#skills" class="mobile-nav__link">Skills</a>
+        <a href="#projects" class="mobile-nav__link">Projects</a>
+        <a href="#contact" class="mobile-nav__link">Contact</a>
+      </nav>
+
+      <div class="mobile-bottom">
+        <div class="lang-switch lang-switch--mobile">
+          <button class="lang-btn" type="button">EN</button>
+          <img src="assets/img/Group 61.png" alt="" class="lang-divider" />
+          <button class="lang-btn" type="button">DE</button>
+        </div>
+
+        <div class="mobile-socials">
+          <a href="#" aria-label="LinkedIn">
+            <img src="assets/img/linked.png" alt="" />
+          </a>
+          <a href="https://github.com/Joshi-hub" aria-label="GitHub">
+            <img src="assets/img/github.png" alt="" />
+          </a>
+          <a href="mailto:deine-mail@example.com" aria-label="Email">
+            <img src="assets/img/contact.png" alt="" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </header>
