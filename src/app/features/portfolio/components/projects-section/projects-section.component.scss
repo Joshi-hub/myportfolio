@@ -1,5 +1,4 @@
 .projects-section {
-  padding: 100px 16px 40px;
   font-family: 'Bricolage Grotesque', sans-serif;
   color: var(--bg-dark);
 }
@@ -319,5 +318,11 @@ h2 {
   .laptop-wrapper::after,
   .project-image-wrapper::after {
     opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .stickers-img {
+    display: none;
   }
 }
