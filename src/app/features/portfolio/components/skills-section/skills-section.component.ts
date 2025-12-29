@@ -27,8 +27,8 @@ export class SkillsSectionComponent {
   isOpen = false;
   isAnimating = false;
 
-  private midFrameMs = 160;
-  private totalMs = 320;
+  private midFrameMs = 60;
+  private totalMs = 120;
 
   toggleSticker(): void {
     if (this.isAnimating) return;
@@ -36,15 +36,13 @@ export class SkillsSectionComponent {
     this.isAnimating = true;
     this.stickerSrc = this.IMG_MID;
 
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.stickerSrc = this.isOpen ? this.IMG_CLOSED : this.IMG_OPEN;
       this.isOpen = !this.isOpen;
     }, this.midFrameMs);
 
-    window.setTimeout(() => {
+    setTimeout(() => {
       this.isAnimating = false;
     }, this.totalMs);
   }
-
-
 }
