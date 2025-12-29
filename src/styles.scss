@@ -100,3 +100,27 @@ p {
   padding-right: 24px;
   width: 100%;
 }
+
+.section-reveal {
+  opacity: 0;
+  transform: translateX(var(--reveal-x, 0)) translateY(16px);
+  transition: transform 700ms ease, opacity 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+
+.section-reveal.from-left  { --reveal-x: -80px; }
+.section-reveal.from-right { --reveal-x:  80px; }
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
