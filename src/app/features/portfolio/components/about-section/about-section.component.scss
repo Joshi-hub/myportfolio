@@ -131,27 +131,6 @@
   max-width: 480px;
 }
 
-.about__cta {
-  margin-top: 1.8rem;
-  align-self: flex-end;
-  padding: 0.65rem 1.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--bg-dark);
-  background: var(--white);
-  color: var(--bg-dark);
-  font-size: 20px;
-  font-weight: 700;
-  box-shadow: 2px 6px 0 var(--bg-dark);
-  cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.about__right .about__cta:hover {
-  background-color: var(--accent-orange);
-  box-shadow: 0 0 0 transparent;
-  transform: translateY(6px);
-}
-
 .draw-line {
   transform-origin: left center;
   animation: draw-line-loop 5s linear infinite;
