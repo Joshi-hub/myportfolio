@@ -183,11 +183,11 @@
 .footer-badge__text {
   position: absolute;
   inset: 0;
-
+  background: var(--highlight-2);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  border-radius: 999px;
   white-space: nowrap;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }

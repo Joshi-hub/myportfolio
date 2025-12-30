@@ -14,7 +14,7 @@
   position: relative;
   background: url("/assets/img/skill-bg.png") no-repeat center bottom;
   background-size: cover;
-  padding-bottom: 168px;
+  padding-bottom: 100px;
 }
 
 :host ::ng-deep app-header.legacy-notice__header * {
@@ -25,17 +25,6 @@
   position: relative;
   z-index: 1;
   padding: 100px 120px 50px;
-}
-
-.back-link {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  font-weight: 800;
-  color: var(--accent-orange);
-  margin-bottom: 12px;
 }
 
 .legacy-notice__title {
@@ -90,10 +79,8 @@
 
 :host ::ng-deep app-footer.legacy-notice__footer {
   background: var(--white); 
-  border-top: 1px solid color-mix(in srgb, var(--bg-dark) 8%, transparent);
 }
 
-:host ::ng-deep app-footer.legacy-notice__footer,
 :host ::ng-deep app-footer.legacy-notice__footer * {
   color: var(--bg-dark) !important; 
 }
@@ -131,7 +118,7 @@
   }
 
   .legacy-notice__top-inner {
-    padding: 52px 0 34px;
+    padding: 52px 20px 34px;
   }
 
   .legacy-notice__title {
