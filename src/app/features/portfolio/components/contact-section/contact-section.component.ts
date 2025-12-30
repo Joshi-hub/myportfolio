@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { LanguageService } from '../../../../language.service'; // Pfad prüfen
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
 
@@ -11,10 +12,10 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
 })
 export class ContactSectionComponent {
 
-  constructor(private http: HttpClient) {}
+  // LanguageService injizieren
+  constructor(private http: HttpClient, public ls: LanguageService) {}
 
   mailTest = true;
-
   formStatus: FormStatus = 'idle';
   formMessage = '';
 
@@ -29,61 +30,51 @@ export class ContactSectionComponent {
     endPoint: 'https://deineDomain.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
       responseType: 'text' as const
     }
   };
 
-  private markAllTouched(form: NgForm) {
-    Object.values(form.controls).forEach(control => control.markAsTouched());
-  }
-
-  private isValidEmail(value: string): boolean {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((value || '').trim());
-  }
-
-  private setStatus(status: FormStatus, message: string) {
+  private setStatus(status: FormStatus, messageKey: string) {
     this.formStatus = status;
-    this.formMessage = message;
+    // Wir holen die Nachricht direkt aus dem Service via Key
+    this.formMessage = messageKey ? (this.ls.t('contact') as any)[messageKey] : '';
   }
 
   onSubmit(ngForm: NgForm) {
     this.setStatus('idle', '');
 
     if (!ngForm.valid) {
-      this.markAllTouched(ngForm);
-      this.setStatus('error', 'Please complete all fields and accept the privacy policy.');
+      this.setStatus('error', 'errorFormInvalid');
       return;
     }
 
     if (!this.isValidEmail(this.contactData.email)) {
-      this.setStatus('error', 'Please enter a valid email address.');
+      this.setStatus('error', 'errorEmail');
       return;
     }
 
     if (!this.mailTest) {
-      this.setStatus('sending', 'Sending your message…');
+      this.setStatus('sending', 'sending');
 
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
         .subscribe({
-          next: (response) => {
-            console.log('Mail response:', response);
+          next: () => {
             ngForm.resetForm();
-            this.setStatus('success', 'Thanks! Your message has been sent.');
+            this.setStatus('success', 'success');
           },
-          error: (error) => {
-            console.error(error);
-            this.setStatus('error', 'Sorry — your message could not be sent. Please try again.');
-          },
-          complete: () => console.info('send post complete')
+          error: () => {
+            this.setStatus('error', 'errorSend');
+          }
         });
     } else {
-      console.info('Mail-Test aktiv: Nachricht wird nicht gesendet.');
-      ngForm.resetForm();
-      this.setStatus('info', 'Test mode is active: message was not sent.');
+      console.log('MailTest active. Data:', this.contactData);
+      this.setStatus('success', 'success');
     }
+  }
+
+  private isValidEmail(value: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((value || '').trim());
   }
 }

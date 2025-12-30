@@ -4,52 +4,33 @@
   <div class="hero__inner">
     <ul class="hero__socials">
       <li>
-        <a href="#" target="_blank" rel="noopener noreferrer">
-          <img
-            src="assets/img/linked.png"
-            alt="LinkedIn"
-            class="hero__social-img"
-          />
+        <a [href]="ls.t('hero').linkedinLink" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/linked.png" [alt]="ls.t('hero').linkedin" class="hero__social-img" />
         </a>
       </li>
       <li>
-        <a
-          href="https://github.com/Joshi-hub"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="assets/img/github.png"
-            alt="GitHub"
-            class="hero__social-img"
-          />
+        <a [href]="ls.t('hero').githubLink" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/github.png" [alt]="ls.t('hero').github" class="hero__social-img" />
         </a>
       </li>
       <li>
-        <a href="mailto:deine-mail@example.com">
-          <img
-            src="assets/img/contact.png"
-            alt="E-Mail"
-            class="hero__social-img"
-          />
+        <a [href]="ls.t('hero').emailLink">
+          <img src="assets/img/contact.png" [alt]="ls.t('hero').email" class="hero__social-img" />
         </a>
       </li>
     </ul>
 
     <div class="hero__box">
       <div class="hero__badge-container">
-        <img
-          src="/assets/img/waving_hand.png"
-          alt="Wave"
-          class="hero__hand-img"
-        />
-        <span class="hero__badge-text hero__badge-text--initial"
-          >Hello world</span
-        >
-        <span class="hero__badge-text hero__badge-text--hover"
-          >I'm Joshua</span
-        >
+        <img src="/assets/img/waving_hand.png" alt="Wave" class="hero__hand-img" />
+        <span class="hero__badge-text hero__badge-text--initial">
+          {{ ls.t('hero').hello }}
+        </span>
+        <span class="hero__badge-text hero__badge-text--hover">
+          {{ ls.t('hero').iam }}
+        </span>
       </div>
+
       <div class="hero__title-row">
         <div class="hero__frontend hero__word">
           <span
@@ -57,16 +38,11 @@
             *ngFor="let ch of frontend"
             [attr.data-upper]="ch"
             [attr.data-lower]="ch.toLowerCase()"
-            [attr.aria-label]="ch"
           ></span>
         </div>
 
         <div class="hero__polaroid">
-          <img
-            src="assets/img/joshi1.png"
-            alt="Joshua"
-            class="hero__polaroid-img"
-          />
+          <img src="assets/img/joshi1.png" alt="Joshua" class="hero__polaroid-img" />
         </div>
       </div>
 
@@ -76,16 +52,15 @@
           *ngFor="let ch of developer"
           [attr.data-upper]="ch"
           [attr.data-lower]="ch.toLowerCase()"
-          [attr.aria-label]="ch"
         ></span>
       </div>
 
       <button
         class="hero__cta"
         type="button"
-        onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })"
+        (click)="scrollToContact()"
       >
-        Get in Touch
+        {{ ls.t('hero').cta }}
       </button>
     </div>
   </div>

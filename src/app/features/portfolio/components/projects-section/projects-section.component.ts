@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../../../language.service';
+import { TRANSLATIONS } from '../../../../language-text'; 
+
+type ProjectKey = keyof typeof TRANSLATIONS['en']['projects'];
 
 type Project = {
   id: string;
-  title: string;
-  description: string;
+  titleKey: ProjectKey; 
+  descKey: ProjectKey;   
   image: string;
 };
 
@@ -13,20 +17,21 @@ type Project = {
   styleUrls: ['./projects-section.component.scss']
 })
 export class ProjectsSectionComponent {
+  
   projects: Project[] = [
     {
       id: 'el-pollo-loco',
-      title: 'El Pollo Loco',
-      description:
-        'A jump, run and throw game based on an object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
+      titleKey: 'polloTitle',
+      descKey: 'polloDesc',
       image: 'assets/img/Pollo.png'
     },
     {
       id: 'join',
-      title: 'Join',
-      description:
-        'A Kanban-style project management tool inspired by Trello. Create tasks, assign users, manage categories and keep track of your workflow in a clear board view.',
+      titleKey: 'joinTitle',
+      descKey: 'joinDesc',
       image: 'assets/img/join.jpg'
-    },
+    }
   ];
+
+  constructor(public ls: LanguageService) {}
 }

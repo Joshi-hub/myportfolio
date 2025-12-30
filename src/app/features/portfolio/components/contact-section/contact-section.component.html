@@ -4,15 +4,12 @@
   <div class="container">
     <div class="content-wrapper">
       <div class="contact-info">
-        <h4 class="section-tag">Contact</h4>
-        <h2 class="main-title">
-          Ready to work <br />
-          together?
-        </h2>
+        <h4 class="section-tag">{{ ls.t('contact').tag }}</h4>
+        
+        <h2 class="main-title" [innerHTML]="ls.t('contact').title"></h2>
 
         <p class="description">
-          Puntual, clean code and efficient delivery is my promise. Let's create
-          something amazing together. (Hier deinen Text einfügen)
+          {{ ls.t('contact').description }}
         </p>
 
         <div class="arrow-container">
@@ -34,30 +31,28 @@
           </p>
 
           <div class="form-group">
-            <label for="name">What's your name?</label>
+            <label for="name">{{ ls.t('contact').nameLabel }}</label>
             <input
               type="text"
               id="name"
               name="name"
               [(ngModel)]="contactData.name"
               #nameRef="ngModel"
-              placeholder="Name"
+              [placeholder]="ls.t('contact').namePlaceholder"
               required
               class="form-input"
             />
 
             <p
               class="error-text"
-              *ngIf="
-                nameRef.invalid && (nameRef.touched || contactForm.submitted)
-              "
+              *ngIf="nameRef.invalid && (nameRef.touched || contactForm.submitted)"
             >
-              Please enter your name.
+              {{ ls.t('contact').errorName }}
             </p>
           </div>
 
           <div class="form-group">
-            <label for="email">What's your email?</label>
+            <label for="email">{{ ls.t('contact').emailLabel }}</label>
             <input
               type="email"
               id="email"
@@ -66,28 +61,26 @@
               #emailRef="ngModel"
               required
               email
-              placeholder="Email"
+              [placeholder]="ls.t('contact').emailPlaceholder"
               class="form-input"
             />
 
             <p
               class="error-text"
-              *ngIf="
-                emailRef.invalid && (emailRef.touched || contactForm.submitted)
-              "
+              *ngIf="emailRef.invalid && (emailRef.touched || contactForm.submitted)"
             >
-              Please enter a valid email address.
+              {{ ls.t('contact').errorEmail }}
             </p>
           </div>
 
           <div class="form-group">
-            <label for="message">How can I help you?</label>
+            <label for="message">{{ ls.t('contact').messageLabel }}</label>
             <textarea
               id="message"
               name="message"
               [(ngModel)]="contactData.message"
               #messageRef="ngModel"
-              placeholder="Hello, I need a website..."
+              [placeholder]="ls.t('contact').messagePlaceholder"
               rows="4"
               required
               class="form-input textarea"
@@ -95,12 +88,9 @@
 
             <p
               class="error-text"
-              *ngIf="
-                messageRef.invalid &&
-                (messageRef.touched || contactForm.submitted)
-              "
+              *ngIf="messageRef.invalid && (messageRef.touched || contactForm.submitted)"
             >
-              Please enter a message.
+              {{ ls.t('contact').errorMessage }}
             </p>
           </div>
 
@@ -117,20 +107,17 @@
               <span class="checkbox-ui" aria-hidden="true"></span>
 
               <span class="policy-text">
-                I've read the
-                <a routerLink="/imprint">privacy policy</a>
-                and agree to the processing of my data as outlined.
+                {{ ls.t('contact').policyPart1 }}
+                <a routerLink="/imprint">{{ ls.t('contact').policyLink }}</a>
+                {{ ls.t('contact').policyPart2 }}
               </span>
             </label>
 
             <p
               class="error-text"
-              *ngIf="
-                privacyRef.invalid &&
-                (privacyRef.touched || contactForm.submitted)
-              "
+              *ngIf="privacyRef.invalid && (privacyRef.touched || contactForm.submitted)"
             >
-              Please accept the privacy policy.
+              {{ ls.t('contact').errorPrivacy }}
             </p>
           </div>
 
@@ -139,7 +126,7 @@
             class="submit-btn"
             [disabled]="contactForm.invalid"
           >
-            Say hello :)
+            {{ ls.t('contact').submitBtn }}
           </button>
         </form>
       </div>

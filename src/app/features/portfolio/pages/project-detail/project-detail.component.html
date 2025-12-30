@@ -1,10 +1,16 @@
 <section class="project-detail">
   <app-header class="header--on-dark"></app-header>
+  
   <div class="project-detail__wrap">
     <div class="project-detail__left">
-      <button type="button" class="back-btn" (click)="goBack()">← Go Back</button>
+      <button type="button" class="back-btn" (click)="goBack()">
+        ← {{ ls.t('projectDetail').back }}
+      </button>
 
-      <h1 class="project-title">{{ project?.title }}</h1>
+      <h1 class="project-title" *ngIf="project">
+        {{ getTranslation(project.titleKey) }}
+      </h1>
+      
       <img
         class="project-title-underline"
         src="assets/img/19_Line.png"
@@ -12,14 +18,18 @@
         aria-hidden="true"
       />
 
-      <h3 class="section-heading">Description</h3>
-      <p class="section-text">{{ project?.description }}</p>
+      <h3 class="section-heading">{{ ls.t('projects').tag }}</h3>
+      <p class="section-text" *ngIf="project">
+        {{ getTranslation(project.descKey) }}
+      </p>
 
-      <h3 class="section-heading">Implementation Details</h3>
-      <p class="section-text">{{ project?.implementationDetails }}</p>
+      <h3 class="section-heading">{{ ls.t('projectDetail').implementation }}</h3>
+      <p class="section-text">
+        {{ ls.t('projects').mainDescription }}
+      </p>
 
       <div class="duration-row">
-        <span class="duration-label">Duration</span>
+        <span class="duration-label">{{ ls.t('projectDetail').duration }}</span>
         <span class="duration-value">{{ project?.duration }}</span>
       </div>
 
@@ -41,7 +51,7 @@
 
     <div class="project-detail__right">
       <div class="project-image">
-        <img [src]="project?.image" [alt]="project?.title" />
+        <img [src]="project?.image" [alt]="project ? getTranslation(project.titleKey) : ''" />
       </div>
 
       <div class="action-row">
@@ -50,7 +60,7 @@
       </div>
 
       <a class="next-project" [routerLink]="['/projects', nextProjectId]">
-        Next Project <span class="next-arrow">→</span>
+        {{ ls.t('projectDetail').next }} <span class="next-arrow">→</span>
       </a>
     </div>
   </div>

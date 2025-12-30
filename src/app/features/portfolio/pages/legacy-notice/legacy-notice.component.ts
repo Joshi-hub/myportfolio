@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
+import { LanguageService } from '../../../../language.service'; 
 
 @Component({
   selector: 'app-legacy-notice',
@@ -7,10 +8,10 @@ import { Location } from '@angular/common';
   styleUrls: ['./legacy-notice.component.scss']
 })
 export class LegacyNoticeComponent {
-  prevProjectId = 'join';
-  nextProjectId = 'el-pollo-loco';
-
-  constructor(private location: Location) {}
+  constructor(
+    private location: Location,
+    public ls: LanguageService
+  ) {}
 
   goBack(): void {
     this.location.back();

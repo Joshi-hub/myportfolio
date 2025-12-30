@@ -1,12 +1,13 @@
 <section class="testimonials" aria-labelledby="testimonials-title">
   <app-section-title reveal="right"></app-section-title>
+  
   <div class="inner">
     <div class="eyebrow">
       <img class="eyebrow__arrow" src="assets/img/Blue A.png" alt="" aria-hidden="true" />
-      <span>IN THEIR WORDS:</span>
+      <span>{{ ls.t('testimonials').eyebrow }}</span>
     </div>
 
-    <h2 id="testimonials-title" class="title">Colleagues' Thoughts</h2>
+    <h2 id="testimonials-title" class="title">{{ ls.t('testimonials').title }}</h2>
 
     <div class="notes">
       <article
@@ -31,7 +32,7 @@
         />
 
         <div class="note__content">
-          <p class="quote">“{{ t.quote }}”</p>
+          <p class="quote">“{{ getTranslation(t.quoteKey) }}”</p>
 
           <div class="footer">
             <div>
@@ -39,8 +40,8 @@
               <div class="role">{{ t.role }}</div>
             </div>
 
-            <a class="profile" [href]="t.profileUrl || '#'" target="_blank" rel="noreferrer">
-              Profile
+            <a class="profile" [href]="t.profileUrl" target="_blank">
+              <img src="assets/img/linked.png" alt="LinkedIn" />
             </a>
           </div>
         </div>

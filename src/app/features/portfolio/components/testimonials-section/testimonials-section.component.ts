@@ -1,7 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core'; // ChangeDetectionStrategy hier nicht mehr nötig
+import { LanguageService } from '../../../../language.service';
+import { TRANSLATIONS } from '../../../../language-text';
+
+type TestimonialKey = keyof typeof TRANSLATIONS['en']['testimonials'];
 
 type Testimonial = {
-  quote: string;
+  quoteKey: TestimonialKey; 
   name: string;
   role: string;
   profileUrl?: string;
@@ -11,35 +15,37 @@ type Testimonial = {
 @Component({
   selector: 'app-testimonials-section',
   templateUrl: './testimonials-section.component.html',
-  styleUrls: ['./testimonials-section.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./testimonials-section.component.scss']
+  // ZEILE ENTFERNT: changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsSectionComponent {
   readonly items: Testimonial[] = [
     {
       variant: 'left',
-      quote:
-        "Karl really kept the team together with his great organization and clear communication. We wouldn’t have got this far without his commitment.",
+      quoteKey: 'quote1',
       name: 'Joshua A.',
       role: 'Frontend Developer',
       profileUrl: '#',
     },
     {
       variant: 'center',
-      quote:
-        "It’s a pleasure to work with Karl. He knows how to encourage team members to work together and build solutions. Regarding the well-being, he was always present and helpful.",
+      quoteKey: 'quote2',
       name: 'Colleague',
       role: 'Team Member',
       profileUrl: '#',
     },
     {
       variant: 'right',
-      quote:
-        'His positive willingness to take on tasks is a significant contribution to us.',
+      quoteKey: 'quote3',
       name: 'Colleague',
       role: 'Team Member',
       profileUrl: '#',
     },
   ];
-}
 
+  constructor(public ls: LanguageService) {}
+
+  getTranslation(key: string): string {
+    return (this.ls.t('testimonials') as any)[key];
+  }
+}

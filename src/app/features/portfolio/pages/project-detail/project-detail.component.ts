@@ -2,12 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { LanguageService } from '../../../../language.service'; // Pfad prüfen
+import { TRANSLATIONS } from '../../../../language-text';
+
+// Wir definieren einen Typ für die Schlüssel, um Tippfehler zu vermeiden
+type ProjectKey = keyof typeof TRANSLATIONS['en']['projects'];
 
 type Project = {
   id: string;
-  title: string;
-  description: string;
-  implementationDetails: string;
+  titleKey: ProjectKey;
+  descKey: ProjectKey;
   duration: string;
   image: string;
   githubUrl: string;
@@ -23,17 +27,14 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
   projectId = '';
   project?: Project;
   nextProjectId = '';
-
   private sub?: Subscription;
 
+  // Hier nutzen wir die Keys aus deiner TRANSLATIONS Datei
   private projects: Project[] = [
     {
       id: 'el-pollo-loco',
-      title: 'El Pollo Loco',
-      description:
-        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
-      implementationDetails:
-        'Short text that describes your role or the workflow for this specific project. Let a recruiter know about your knowledge and ability to work independently or collaboratively in a structured way.',
+      titleKey: 'polloTitle',
+      descKey: 'polloDesc',
       duration: '3 weeks',
       image: 'assets/img/Pollo.png',
       githubUrl: '#',
@@ -41,11 +42,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     },
     {
       id: 'join',
-      title: 'Join',
-      description:
-        'Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.',
-      implementationDetails:
-        'Short text that describes your role or the workflow for this specific project. Let a recruiter know about your knowledge and ability to work independently or collaboratively in a structured way.',
+      titleKey: 'joinTitle',
+      descKey: 'joinDesc',
       duration: '3 weeks',
       image: 'assets/img/join.jpg',
       githubUrl: '#',
@@ -56,13 +54,13 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    public ls: LanguageService // Wichtig: public für den Zugriff im HTML
   ) {}
 
   ngOnInit(): void {
     this.sub = this.route.paramMap.subscribe(params => {
       this.projectId = params.get('id') ?? '';
-
       const idx = this.projects.findIndex(p => p.id === this.projectId);
 
       if (idx === -1) {
@@ -71,10 +69,14 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       }
 
       this.project = this.projects[idx];
-
       const nextIdx = (idx + 1) % this.projects.length;
       this.nextProjectId = this.projects[nextIdx].id;
     });
+  }
+
+  // Hilfsmethode, um den Text sicher aus dem Translation-Objekt zu holen
+  getTranslation(key: ProjectKey): string {
+    return (this.ls.t('projects') as any)[key];
   }
 
   ngOnDestroy(): void {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from '../../../../language.service'; 
 
 @Component({
   selector: 'app-skills-section',
@@ -27,22 +28,26 @@ export class SkillsSectionComponent {
   isOpen = false;
   isAnimating = false;
 
-  private midFrameMs = 60;
-  private totalMs = 120;
+  constructor(public ls: LanguageService) {} 
 
-  toggleSticker(): void {
+  toggleSticker() {
     if (this.isAnimating) return;
-
     this.isAnimating = true;
-    this.stickerSrc = this.IMG_MID;
 
-    setTimeout(() => {
-      this.stickerSrc = this.isOpen ? this.IMG_CLOSED : this.IMG_OPEN;
-      this.isOpen = !this.isOpen;
-    }, this.midFrameMs);
-
-    setTimeout(() => {
-      this.isAnimating = false;
-    }, this.totalMs);
+    if (!this.isOpen) {
+      this.stickerSrc = this.IMG_MID;
+      setTimeout(() => {
+        this.stickerSrc = this.IMG_OPEN;
+        this.isOpen = true;
+        this.isAnimating = false;
+      }, 150);
+    } else {
+      this.stickerSrc = this.IMG_MID;
+      setTimeout(() => {
+        this.stickerSrc = this.IMG_CLOSED;
+        this.isOpen = false;
+        this.isAnimating = false;
+      }, 150);
+    }
   }
 }
