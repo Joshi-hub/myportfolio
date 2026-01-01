@@ -1,13 +1,20 @@
 <section class="testimonials" aria-labelledby="testimonials-title">
   <app-section-title reveal="right"></app-section-title>
-  
+
   <div class="inner">
     <div class="eyebrow">
-      <img class="eyebrow__arrow" src="assets/img/Blue A.png" alt="" aria-hidden="true" />
-      <span>{{ ls.t('testimonials').eyebrow }}</span>
+      <img
+        class="eyebrow__arrow"
+        src="assets/img/Blue A.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <span>{{ ls.t("testimonials").eyebrow }}</span>
     </div>
 
-    <h2 id="testimonials-title" class="title">{{ ls.t('testimonials').title }}</h2>
+    <h2 id="testimonials-title" class="title">
+      {{ ls.t("testimonials").title }}
+    </h2>
 
     <div class="notes">
       <article
@@ -17,7 +24,11 @@
       >
         <img
           class="note__bg"
-          src="assets/img/paper-orange.png"
+          [src]="
+            t.variant === 'center'
+              ? 'assets/img/card.png'
+              : 'assets/img/paper-orange.png'
+          "
           alt=""
           aria-hidden="true"
           loading="lazy"

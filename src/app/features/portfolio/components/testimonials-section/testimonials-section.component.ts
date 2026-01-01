@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'; // ChangeDetectionStrategy hier nicht mehr nötig
+import { Component } from '@angular/core';
 import { LanguageService } from '../../../../language.service';
 import { TRANSLATIONS } from '../../../../language-text';
 
@@ -16,7 +16,6 @@ type Testimonial = {
   selector: 'app-testimonials-section',
   templateUrl: './testimonials-section.component.html',
   styleUrls: ['./testimonials-section.component.scss']
-  // ZEILE ENTFERNT: changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TestimonialsSectionComponent {
   readonly items: Testimonial[] = [
