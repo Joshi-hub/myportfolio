@@ -11,8 +11,6 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
   styleUrls: ['./contact-section.component.scss']
 })
 export class ContactSectionComponent {
-
-  // LanguageService injizieren
   constructor(private http: HttpClient, public ls: LanguageService) {}
 
   mailTest = true;
@@ -37,7 +35,6 @@ export class ContactSectionComponent {
 
   private setStatus(status: FormStatus, messageKey: string) {
     this.formStatus = status;
-    // Wir holen die Nachricht direkt aus dem Service via Key
     this.formMessage = messageKey ? (this.ls.t('contact') as any)[messageKey] : '';
   }
 
