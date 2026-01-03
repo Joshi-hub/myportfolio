@@ -1,49 +1,99 @@
 <section class="projects-section" id="projects">
   <app-section-title reveal="left"></app-section-title>
+
   <div class="container">
     <div class="section-header">
       <div class="header-left">
         <span class="section-tag">{{ ls.t('projects').tag }}</span>
+
         <h2 class="section-title">{{ ls.t('projects').title }}</h2>
-        <img src="assets/img/linea naranja 3.png" alt="decoration" class="title-underline" />
-        <p>{{ ls.t('projects').mainDescription }}</p>
+        <img
+          src="assets/img/linea naranja 3.png"
+          alt="decoration"
+          class="title-underline"
+        />
+
+        <p class="section-description">
+          {{ ls.t('projects').mainDescription }}
+        </p>
       </div>
 
       <div class="header-right">
         <div class="featured-block">
           <div class="header-images">
             <div class="laptop-wrapper">
-              <img src="assets/img/Laptop.png" alt="Laptop" class="header-icon" />
-              <a class="laptop-overlay-btn" [routerLink]="['/projects', 'join']">
+              <img
+                src="assets/img/Laptop.png"
+                alt="Laptop"
+                class="header-icon"
+              />
+
+              <a
+                class="laptop-overlay-btn"
+                [routerLink]="['/projects', 'join']"
+              >
                 {{ ls.t('projects').detailsBtn }}
               </a>
             </div>
-            <img src="assets/img/Stickers.png" alt="Stickers" class="stickers-img" />
+
+            <img
+              src="assets/img/Stickers.png"
+              alt="Stickers"
+              class="stickers-img"
+            />
           </div>
 
           <div class="featured-text">
             <a class="featured-title-link" [routerLink]="['/projects', 'join']">
               <h2>{{ ls.t('projects').joinTitle }}</h2>
             </a>
-            <p class="section-description">{{ ls.t('projects').featuredDescription }}</p>
+
+            <p class="section-description">
+              {{ ls.t('projects').featuredDescription }}
+            </p>
+
+            <div class="card-actions">
+              <a class="laptop-below-btn" [routerLink]="['/projects', 'join']">
+                {{ ls.t('projects').detailsBtn }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="projects-list">
-      <div class="project-card" *ngFor="let project of projects; let i = index">
+      <div class="project-card" *ngFor="let project of projects">
         <div class="project-image-wrapper">
-          <img [src]="project.image" [alt]="ls.t('projects')[project.titleKey]" class="project-img" />
-          <a class="project-overlay-btn" [routerLink]="['/projects', project.id]">
+          <img
+            class="project-img"
+            [src]="project.image"
+            [alt]="ls.t('projects')[project.titleKey]"
+          />
+          <div class="image-border"></div>
+
+          <a
+            class="project-overlay-btn"
+            [routerLink]="['/projects', project.id]"
+          >
             {{ ls.t('projects').detailsBtn }}
           </a>
-          <div class="image-border"></div>
         </div>
 
         <div class="project-content">
           <h2 class="project-title">{{ ls.t('projects')[project.titleKey] }}</h2>
-          <p class="project-description">{{ ls.t('projects')[project.descKey] }}</p>
+          <p class="project-description">
+            {{ ls.t('projects')[project.descKey] }}
+          </p>
+
+          <div class="card-actions">
+            <a
+              class="project-below-btn"
+              [routerLink]="['/projects', project.id]"
+            >
+              {{ ls.t('projects').detailsBtn }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
