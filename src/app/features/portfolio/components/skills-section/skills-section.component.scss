@@ -9,7 +9,7 @@
   padding: clamp(96px, 12vw, 140px) 0 clamp(180px, 22vw, 260px) 0;
 
   h4 {
-    font-family: Bricolage Grotesque;
+    font-family: 'Bricolage Grotesque';
     font-weight: 500;
     font-size: clamp(14px, 3.5vw, 20px);
     line-height: 100%;
@@ -19,7 +19,7 @@
   }
 
   h2 {
-    font-family: Bricolage Grotesque;
+    font-family: 'Bricolage Grotesque';
     font-weight: 700;
     font-size: clamp(44px, 10vw, 64px);
     line-height: 100%;
@@ -57,28 +57,6 @@
     transform: translate(-50%, -50%) scaleX(0);
     animation: draw-scribble-center 5s linear infinite;
   }
-  
-  @keyframes draw-scribble-center {
-    0% {
-      transform: translate(-50%, -50%) scaleX(0);
-    }
-  
-    2% {
-      transform: translate(-50%, -50%) scaleX(1);
-    }
-  
-    45% {
-      transform: translate(-50%, -50%) scaleX(1);
-    }
-  
-    47% {
-      transform: translate(-50%, -50%) scaleX(0);
-    }
-  
-    100% {
-      transform: translate(-50%, -50%) scaleX(0);
-    }
-  }
 
   .description-img {
     display: block;
@@ -109,15 +87,9 @@
     width: 70px;
     height: auto;
     display: block;
-    filter: grayscale(100%);
-    opacity: 0.9;
-    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
-  }
-
-  .skill-card:hover img {
-    filter: none;
-    opacity: 1;
-    transform: scale(1.12);
+    filter: none;      
+    opacity: 1;       
+    transition: filter 0.3s ease, transform 0.2s ease;
   }
 
   .sticker-wrapper {
@@ -126,23 +98,30 @@
   }
 }
 
-@media (max-width: 900px) {
+@keyframes draw-scribble-center {
+  0% { transform: translate(-50%, -50%) scaleX(0); }
+  2% { transform: translate(-50%, -50%) scaleX(1); }
+  45% { transform: translate(-50%, -50%) scaleX(1); }
+  47% { transform: translate(-50%, -50%) scaleX(0); }
+  100% { transform: translate(-50%, -50%) scaleX(0); }
+}
+
+@media screen and (min-width: 600px) {
   .skills-section {
-    .scribble-circle {
-      display: none;
+    .skill-card img {
+      filter: grayscale(100%);
+      opacity: 0.9;
+    }
+
+    .skill-card:hover img {
+      filter: none;           
+      opacity: 1;
+      transform: scale(1.12);  
     }
   }
 }
 
-@media (min-width: 640px) {
-  .skills-section {
-    .skills-grid {
-      max-width: 520px;
-    }
-  }
-}
-
-@media (min-width: 1400px) {
+@media screen and (min-width: 1400px) {
   .skills-section {
     .header-row {
       flex-direction: row;
@@ -154,11 +133,6 @@
 
     .title-wrapper {
       padding: 0 50px;
-    }
-
-    .scribble-circle {
-      width: 300px;
-      display: block;
     }
 
     .description-img {

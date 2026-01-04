@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../../../../language.service'; // Pfad prüfen
+import { LanguageService } from '../../../../language.service'; 
 
 @Component({
   selector: 'app-hero-section',

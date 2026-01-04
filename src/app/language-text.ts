@@ -8,14 +8,14 @@ export const TRANSLATIONS = {
     },
     hero: {
       hello: 'Hello world',
-      iam: "Joshua Auerbach",
+      iam: "I'm Joshua",
       cta: 'Get in Touch',
       linkedin: 'LinkedIn Profile',
       github: 'GitHub Profile',
       email: 'Send E-Mail',
-      linkedinLink: 'https://www.linkedin.com/in/dein-profil', // Ersetze mit deinem Link
+      linkedinLink: 'https://www.linkedin.com/in/dein-profil', 
       githubLink: 'https://github.com/Joshi-hub',
-      emailLink: 'mailto:deine-mail@example.com' // Ersetze mit deiner Mail
+      emailLink: 'mailto:joshuaauerbach20@gmail.com' 
     },
     about: {
       eyebrow: "WHO'S Joshua",
@@ -119,14 +119,14 @@ export const TRANSLATIONS = {
     },
     hero: {
       hello: 'Hallo Welt',
-      iam: 'Ich bin Joshua Auerbach :)',
+      iam: 'Ich bin Joshua ',
       cta: 'Kontakt aufnehmen',
       linkedin: 'LinkedIn Profil',
       github: 'GitHub Profil',
       email: 'E-Mail senden',
       linkedinLink: 'https://www.linkedin.com/in/dein-profil',
       githubLink: 'https://github.com/Joshi-hub',
-      emailLink: 'mailto:deine-mail@example.com'
+      emailLink: 'mailto:joshuaauerbach20@gmail.com'
     },
     about: {
       eyebrow: 'WER IST Joshua',

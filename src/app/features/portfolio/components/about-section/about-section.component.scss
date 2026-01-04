@@ -175,3 +175,17 @@
     width: clamp(160px, 30vw, 200px);
   }
 }
+@media (max-width: 600px) {
+  .about {
+    padding: clamp(40px, 10vw, 80px) clamp(16px, 5vw, 40px);
+  }
+
+  .about__tag-overlay {
+    font-size: clamp(16px, 3vw, 20px);
+    padding: 16px;
+  }
+
+  .about__tag-bg {
+    height: 70px;
+  }
+}

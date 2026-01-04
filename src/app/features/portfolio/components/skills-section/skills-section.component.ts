@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from '../../../../language.service'; 
+import { LanguageService } from '../../../../language.service';
 
 @Component({
   selector: 'app-skills-section',
@@ -28,7 +28,7 @@ export class SkillsSectionComponent {
   isOpen = false;
   isAnimating = false;
 
-  constructor(public ls: LanguageService) {} 
+  constructor(public ls: LanguageService) {}
 
   toggleSticker() {
     if (this.isAnimating) return;
