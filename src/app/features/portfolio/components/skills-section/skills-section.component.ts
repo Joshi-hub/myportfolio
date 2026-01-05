@@ -35,19 +35,27 @@ export class SkillsSectionComponent {
     this.isAnimating = true;
 
     if (!this.isOpen) {
-      this.stickerSrc = this.IMG_MID;
-      setTimeout(() => {
-        this.stickerSrc = this.IMG_OPEN;
-        this.isOpen = true;
-        this.isAnimating = false;
-      }, 150);
+      this.animateToOpen();
     } else {
-      this.stickerSrc = this.IMG_MID;
-      setTimeout(() => {
-        this.stickerSrc = this.IMG_CLOSED;
-        this.isOpen = false;
-        this.isAnimating = false;
-      }, 150);
+      this.animateToClosed();
     }
+  }
+
+  private animateToOpen() {
+    this.stickerSrc = this.IMG_MID;
+    setTimeout(() => {
+      this.stickerSrc = this.IMG_OPEN;
+      this.isOpen = true;
+      this.isAnimating = false;
+    }, 150);
+  }
+
+  private animateToClosed() {
+    this.stickerSrc = this.IMG_MID;
+    setTimeout(() => {
+      this.stickerSrc = this.IMG_CLOSED;
+      this.isOpen = false;
+      this.isAnimating = false;
+    }, 150);
   }
 }

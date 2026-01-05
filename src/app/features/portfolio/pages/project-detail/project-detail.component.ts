@@ -2,10 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../../../../language.service'; // Pfad prüfen
+import { LanguageService } from '../../../../language.service'; 
 import { TRANSLATIONS } from '../../../../language-text';
 
-// Wir definieren einen Typ für die Schlüssel, um Tippfehler zu vermeiden
 type ProjectKey = keyof typeof TRANSLATIONS['en']['projects'];
 
 type Project = {
@@ -29,7 +28,6 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
   nextProjectId = '';
   private sub?: Subscription;
 
-  // Hier nutzen wir die Keys aus deiner TRANSLATIONS Datei
   private projects: Project[] = [
     {
       id: 'el-pollo-loco',
@@ -55,26 +53,33 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    public ls: LanguageService // Wichtig: public für den Zugriff im HTML
+    public ls: LanguageService 
   ) {}
 
   ngOnInit(): void {
     this.sub = this.route.paramMap.subscribe(params => {
-      this.projectId = params.get('id') ?? '';
-      const idx = this.projects.findIndex(p => p.id === this.projectId);
-
-      if (idx === -1) {
-        this.router.navigate(['/']);
-        return;
-      }
-
-      this.project = this.projects[idx];
-      const nextIdx = (idx + 1) % this.projects.length;
-      this.nextProjectId = this.projects[nextIdx].id;
+      const id = params.get('id') ?? '';
+      this.initializeProjectData(id);
     });
   }
 
-  // Hilfsmethode, um den Text sicher aus dem Translation-Objekt zu holen
+  private initializeProjectData(id: string) {
+    this.projectId = id;
+    const idx = this.projects.findIndex(p => p.id === id);
+
+    if (idx === -1) {
+      this.router.navigate(['/']);
+      return;
+    }
+    this.setProjectState(idx);
+  }
+
+  private setProjectState(idx: number) {
+    this.project = this.projects[idx];
+    const nextIdx = (idx + 1) % this.projects.length;
+    this.nextProjectId = this.projects[nextIdx].id;
+  }
+
   getTranslation(key: ProjectKey): string {
     return (this.ls.t('projects') as any)[key];
   }

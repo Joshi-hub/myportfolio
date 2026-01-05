@@ -39,36 +39,49 @@ export class ContactSectionComponent {
   }
 
   onSubmit(ngForm: NgForm) {
-    this.setStatus('idle', '');
+    if (!this.isFormValid(ngForm)) return;
 
+    if (this.mailTest) {
+      this.handleMailTest();
+    } else {
+      this.sendMail(ngForm);
+    }
+  }
+
+  private isFormValid(ngForm: NgForm): boolean {
+    this.setStatus('idle', '');
     if (!ngForm.valid) {
       this.setStatus('error', 'errorFormInvalid');
-      return;
+      return false;
     }
+    return this.validateEmailField();
+  }
 
+  private validateEmailField(): boolean {
     if (!this.isValidEmail(this.contactData.email)) {
       this.setStatus('error', 'errorEmail');
-      return;
+      return false;
     }
+    return true;
+  }
 
-    if (!this.mailTest) {
-      this.setStatus('sending', 'sending');
+  private sendMail(ngForm: NgForm) {
+    this.setStatus('sending', 'sending');
+    this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
+      .subscribe({
+        next: () => this.handleSuccess(ngForm),
+        error: () => this.setStatus('error', 'errorSend')
+      });
+  }
 
-      this.http
-        .post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-        .subscribe({
-          next: () => {
-            ngForm.resetForm();
-            this.setStatus('success', 'success');
-          },
-          error: () => {
-            this.setStatus('error', 'errorSend');
-          }
-        });
-    } else {
-      console.log('MailTest active. Data:', this.contactData);
-      this.setStatus('success', 'success');
-    }
+  private handleSuccess(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.setStatus('success', 'success');
+  }
+
+  private handleMailTest() {
+    console.log('MailTest active. Data:', this.contactData);
+    this.setStatus('success', 'success');
   }
 
   private isValidEmail(value: string): boolean {
