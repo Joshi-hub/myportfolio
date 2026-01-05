@@ -4,11 +4,7 @@
 }
 
 .footer {
-  background-color: transparent;
-  border-top: 1px solid color-mix(in srgb, var(--white) 12%, transparent);
   padding: 2.4rem 0 1.6rem;
-  font-family: 'Bricolage Grotesque', sans-serif;
-  color: var(--text-main);
 }
 
 .footer-container {
@@ -183,7 +179,6 @@
 .footer-badge__text {
   position: absolute;
   inset: 0;
-  background: var(--highlight-2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,6 +195,7 @@
 .footer-badge__text--hover {
   opacity: 0;
   transform: translateX(20px);
+  background: var(--highlight-2);
 }
 
 .footer-badge:hover .footer-badge__text--initial,

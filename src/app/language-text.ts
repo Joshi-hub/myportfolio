@@ -23,8 +23,8 @@ export const TRANSLATIONS = {
       location: 'Based in Heilbronn',
       relocate: 'Open to relocate',
       remote: 'Open to work remote',
-      text1: 'Hey there, I’m Joshua. I am a passionate software developer who loves to create elegant solutions for complex problems.',
-      text2: 'Let’s collaborate and build something remarkable together!',
+      text1: 'I’m Joshua, an aspiring front-end developer currently in professional training. I turn UI designs into clean, well-structured code and value clear logic, solid structure, and maintainable solutions. HTML, CSS, and JavaScript are my foundation — practical, reliable, and implemented step by step in a way that holds up in real-world projects.',
+      text2: 'I’m solution-oriented, learn quickly, and stick with a task until a feature is polished and solid. I’m applying for a Junior Front-End Developer role and looking for a team where I can contribute to real applications, take on responsibility, and continue to grow professionally.',
       cta: 'Let’s talk'
     },
     skills: {
@@ -35,7 +35,7 @@ export const TRANSLATIONS = {
     projects: {
       tag: 'My work',
       title: 'Projects',
-      mainDescription: 'Encourage people to take a look and interact with your projects. Highlight your approach to creating responsive, user-friendly projects with efficient code.',
+      mainDescription: 'My projects from professional training and personal practice — many of them are directly playable/testable in the browser. For each project, you’ll find a short description, the key features, and notes on the implementation. I also link the live demo and the repository so you can review the code and try the application yourself.',
       featuredDescription: "Explore a selection of my best work. Here you'll find interactive applications and games that showcase my skills in frontend development.",
       detailsBtn: 'Project details',
       polloTitle: 'El Pollo Loco',
@@ -46,7 +46,7 @@ export const TRANSLATIONS = {
     contact: {
       tag: 'Contact',
       title: 'Ready to work <br /> together?',
-      description: 'Punctual, clean code and efficient delivery is my promise. Let\'s create something amazing together.',
+      description: 'If you have questions about my projects, want to share feedback, or would like to talk about a Junior Front-End Developer opportunity, feel free to reach out. It helps if you include a short summary of your request, your timeline, and—if relevant—links or requirements. I’ll get back to you reliably and as soon as possible.',
       nameLabel: 'What\'s your name?',
       namePlaceholder: 'Your name goes here',
       emailLabel: 'What\'s your email?',
@@ -134,8 +134,8 @@ export const TRANSLATIONS = {
       location: 'Wohnhaft in Heilbronn',
       relocate: 'Bereit umzuziehen',
       remote: 'Bereit für Remote-Arbeit',
-      text1: 'Hallo, ich bin Joshua. Ich bin ein leidenschaftlicher Softwareentwickler, der es liebt, elegante Lösungen für komplexe Probleme zu entwickeln.',
-      text2: 'Lass uns zusammenarbeiten und etwas Außergewöhnliches schaffen!',
+      text1: 'Ich bin Joshua, angehender Frontend-Entwickler in Weiterbildung. Ich setze UI-Designs in sauberen, strukturierten Code um und lege Wert auf klare Logik, gute Struktur und wartbare Lösungen. HTML, CSS und JavaScript sind dabei mein Fundament – pragmatisch, zuverlässig und Schritt für Schritt so umgesetzt, dass es im Projektalltag funktioniert.',
+      text2: 'Ich arbeite lösungsorientiert, lerne schnell und bleibe dran, bis ein Feature wirklich sauber sitzt. Ich bewerbe mich als Junior Frontend-Entwickler und suche ein Team, in dem ich an echten Anwendungen mitbauen, Verantwortung übernehmen und mich fachlich weiterentwickeln kann.',
       cta: 'Lass uns reden'
     },
     skills: {
@@ -146,7 +146,7 @@ export const TRANSLATIONS = {
     projects: {
       tag: 'Meine Arbeit',
       title: 'Projekte',
-      mainDescription: 'Ermutige die Besucher, deine Projekte anzusehen und damit zu interagieren. Hebe deinen Ansatz hervor, responsive und benutzerfreundliche Projekte mit effizientem Code zu erstellen.',
+      mainDescription: 'Meine Projekte aus Weiterbildung und eigener Praxis — viele davon direkt im Browser testbar. Zu jedem Projekt findest du eine kurze Beschreibung, die wichtigsten Funktionen und Hinweise zur Umsetzung. Außerdem verlinke ich jeweils die Live-Demo und das Repository, damit du dir den Code ansehen und die Anwendung direkt ausprobieren kannst.',
       featuredDescription: 'Entdecke eine Auswahl meiner besten Arbeiten. Hier findest du interaktive Anwendungen und Spiele, die meine Fähigkeiten in der Frontend-Entwicklung zeigen.',
       detailsBtn: 'Projekt-Details',
       polloTitle: 'El Pollo Loco',
@@ -157,7 +157,7 @@ export const TRANSLATIONS = {
     contact: {
       tag: 'Kontakt',
       title: 'Bereit für eine <br /> Zusammenarbeit?',
-      description: 'Pünktlichkeit, sauberer Code und effiziente Umsetzung sind mein Versprechen. Lass uns gemeinsam etwas Großartiges schaffen.',
+      description: 'Wenn du Fragen zu meinen Projekten hast, Feedback geben möchtest oder über eine Junior-Frontend-Position sprechen willst, freue ich mich über deine Nachricht. Am hilfreichsten ist es, wenn du kurz dein Anliegen, den zeitlichen Rahmen und – falls relevant – Links oder Anforderungen mitschickst. Ich antworte zuverlässig und zeitnah.',
       nameLabel: 'Wie heißt du?',
       namePlaceholder: 'Dein Name hier',
       emailLabel: 'Wie lautet deine E-Mail?',

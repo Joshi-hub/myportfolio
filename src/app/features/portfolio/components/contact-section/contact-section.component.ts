@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LanguageService } from '../../../../language.service'; // Pfad prüfen
+import { LanguageService } from '../../../../language.service'; 
 
 type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
 
