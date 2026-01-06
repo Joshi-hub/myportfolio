@@ -26,11 +26,11 @@ export class ProjectsSectionComponent {
       image: 'assets/img/Pollo.png'
     },
     {
-      id: 'join',
-      titleKey: 'joinTitle',
-      descKey: 'joinDesc',
-      image: 'assets/img/join.jpg'
-    }
+      id: 'debubble',
+      image: 'assets/img/dab.jpg',
+      titleKey: 'debubbleTitle',
+      descKey: 'debubbleDescription',
+    },
   ];
 
   constructor(public ls: LanguageService) {}

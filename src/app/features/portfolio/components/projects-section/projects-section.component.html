@@ -23,15 +23,12 @@
           <div class="header-images">
             <div class="laptop-wrapper">
               <img
-                src="assets/img/Laptop.png"
+                src="assets/img/leptop.png"
                 alt="Laptop"
                 class="header-icon"
               />
 
-              <a
-                class="laptop-overlay-btn"
-                [routerLink]="['/projects', 'join']"
-              >
+              <a class="laptop-overlay-btn" [routerLink]="['/projects', 'join']">
                 {{ ls.t('projects').detailsBtn }}
               </a>
             </div>
@@ -72,10 +69,7 @@
           />
           <div class="image-border"></div>
 
-          <a
-            class="project-overlay-btn"
-            [routerLink]="['/projects', project.id]"
-          >
+          <a class="project-overlay-btn" [routerLink]="['/projects', project.id]">
             {{ ls.t('projects').detailsBtn }}
           </a>
         </div>
@@ -87,10 +81,7 @@
           </p>
 
           <div class="card-actions">
-            <a
-              class="project-below-btn"
-              [routerLink]="['/projects', project.id]"
-            >
+            <a class="project-below-btn" [routerLink]="['/projects', project.id]">
               {{ ls.t('projects').detailsBtn }}
             </a>
           </div>

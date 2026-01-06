@@ -43,10 +43,19 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       titleKey: 'joinTitle',
       descKey: 'joinDesc',
       duration: '3 weeks',
-      image: 'assets/img/join.jpg',
+      image: 'assets/img/join.png',
       githubUrl: '#',
       liveTestUrl: '#'
-    }
+    },
+    {
+      id: 'debubble',
+      titleKey: 'debubbleTitle',
+      descKey: 'debubbleDescription',
+      duration: '2 weeks',
+      image: 'assets/img/dab.jpg',
+      githubUrl: '#',
+      liveTestUrl: '#'
+    },
   ];
 
   constructor(

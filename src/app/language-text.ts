@@ -41,7 +41,9 @@ export const TRANSLATIONS = {
       polloTitle: 'El Pollo Loco',
       polloDesc: 'A jump, run and throw game based on an object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
       joinTitle: 'Join',
-      joinDesc: 'A Kanban-style project management tool inspired by Trello. Create tasks, assign users, manage categories and keep track of your workflow in a clear board view.'
+      joinDesc: 'A Kanban-style project management tool inspired by Trello. Create tasks, assign users, manage categories and keep track of your workflow in a clear board view.',
+      debubbleTitle: 'Debubble',
+      debubbleDescription: 'A real-time chat messenger featuring channels and direct messaging.',
     },
     contact: {
       tag: 'Contact',
@@ -151,8 +153,10 @@ export const TRANSLATIONS = {
       detailsBtn: 'Projekt-Details',
       polloTitle: 'El Pollo Loco',
       polloDesc: 'Ein Jump-, Run- und Throw-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Flaschen zu finden, um gegen die verrückte Henne zu kämpfen.',
-      joinTitle: 'Join',
-      joinDesc: 'Ein Projektmanagement-Tool im Kanban-Stil, inspiriert von Trello. Erstelle Aufgaben, weise Benutzer zu und behalte den Überblick über deinen Workflow in einer klaren Board-Ansicht.'
+      joinTitle: 'DABubble',
+      joinDesc: 'Ein Projektmanagement-Tool im Kanban-Stil, inspiriert von Trello. Erstelle Aufgaben, weise Benutzer zu und behalte den Überblick über deinen Workflow in einer klaren Board-Ansicht.',
+      debubbleTitle: 'Debubble',
+      debubbleDescription: 'Ein Chat Messenger mit Echtzeit-Kommunikation, Channels und Direktnachrichten.',
     },
     contact: {
       tag: 'Kontakt',
