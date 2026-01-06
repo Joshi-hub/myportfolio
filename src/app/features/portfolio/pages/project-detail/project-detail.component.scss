@@ -1,50 +1,44 @@
 .project-detail {
   position: relative;
   height: 100vh;
-  background: var(--bg-dark); 
-  box-sizing: border-box;
-  overflow: hidden;
+  background: var(--bg-dark);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 20px 80px;
-  z-index: 0;
+  overflow: hidden; 
 }
 
 .project-detail::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background: url("/assets/img/left.png") no-repeat left;
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-size: cover;
+  inset: 0;
   z-index: 1;
   pointer-events: none;
+  background: url("/assets/img/left.png") no-repeat left center;
+  background-size: cover;
+  transform: none;
 }
 
 .header--on-dark {
-  background-color: transparent;
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0 0 auto 0;
   width: 100%;
-  z-index: 3; 
+  z-index: 3;
 }
 
 .project-detail__wrap {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
+
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 80px;
+
+  padding-left: 60px;
+  padding-right: 16px;
 }
 
 .project-detail__left {
@@ -65,13 +59,12 @@
 }
 
 .back-btn {
-  background: transparent;
-  border: 0;
-  padding: 0;
   cursor: pointer;
   font-weight: 700;
   color: var(--accent-orange);
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  text-align: left;
+  font-size: 18px;
 }
 
 .project-title {
@@ -174,27 +167,6 @@
   margin-top: 10px;
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 18px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 800;
-  text-decoration: none;
-  border: 1px solid color-mix(in srgb, var(--white) 75%, transparent);
-  color: var(--white);
-  background: transparent;
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  background: color-mix(in srgb, var(--white) 8%, transparent);
-  border-color: var(--white);
-}
-
 .next-project {
   display: inline-flex;
   align-items: center;
@@ -211,25 +183,96 @@
   line-height: 1;
 }
 
+@media (max-width: 1599px) and (min-width: 1400px) {
+  .project-detail::before {
+    transform: translateX(-7vw) scale(1.06);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .project-detail::before {
+    transform: translateX(-10vw) scale(1);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 1020px) {
+  .project-detail::before {
+    transform: translateX(-15vw) scale(1);
+    transform-origin: left center;
+  }
+}
+
+@media (max-width: 1019px) and (min-width: 901px) {
+  .project-detail::before {
+    transform: translateX(-30vw) scale(1);
+    transform-origin: left center;
+  }
+}
+
 @media (max-width: 900px) {
   .project-detail {
+    height: auto;
+    min-height: 100vh;
     padding: 100px 16px 60px;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .project-detail__wrap {
     flex-direction: column;
     align-items: stretch;
+    justify-content: flex-start;
     gap: 18px;
-    padding: 50px;
-  }
-
-  .project-detail__right {
-    max-width: 100%;
+    padding: 0;
   }
 
   .action-row {
-    justify-content: flex-start;
+    justify-content: center;
+  }
+
+  .back-btn,
+  .next-project {
+    position: absolute;
+    bottom: -28px;
+    margin: 0;
+    z-index: 3;
+  }
+
+  .back-btn {
+    left: 16px;
+    font-size: 16px;
+  }
+
+  .next-project {
+    left: 200px;
+  }
+
+  .project-detail::before {
+    inset: auto; 
+    top: 0;
+    left: 0;
+    width: 160vh;
+    height: 120vh;
+    background: url("/assets/img/left.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%) translateY(10vh);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail::before {
+    height: 140vh;
+    transform: rotate(90deg) translateY(-100%) translateY(18vh);
+  }
+}
+
+@media (max-width: 380px) {
+  .project-detail::before {
+    width: 180vh;
+    transform: rotate(90deg) translateY(-100%) translateY(22vh);
   }
 }

@@ -35,7 +35,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       descKey: 'polloDesc',
       duration: '3 weeks',
       image: 'assets/img/Pollo.png',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Joshi-hub/Ell-Pollo-Loco',
       liveTestUrl: '#'
     },
     {
@@ -44,7 +44,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       descKey: 'joinDesc',
       duration: '3 weeks',
       image: 'assets/img/join.png',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/Joshi-hub/Join',
       liveTestUrl: '#'
     },
     {

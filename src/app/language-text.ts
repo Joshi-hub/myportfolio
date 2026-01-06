@@ -36,7 +36,7 @@ export const TRANSLATIONS = {
       tag: 'My work',
       title: 'Projects',
       mainDescription: 'My projects from professional training and personal practice — many of them are directly playable/testable in the browser. For each project, you’ll find a short description, the key features, and notes on the implementation. I also link the live demo and the repository so you can review the code and try the application yourself.',
-      featuredDescription: "Explore a selection of my best work. Here you'll find interactive applications and games that showcase my skills in frontend development.",
+      featuredDescription: "A Kanban-style project management tool inspired by Trello. Create tasks, assign users, manage categories and keep track of your workflow in a clear board view.",
       detailsBtn: 'Project details',
       polloTitle: 'El Pollo Loco',
       polloDesc: 'A jump, run and throw game based on an object-oriented approach. Help Pepe to find coins and tabasco salsa bottles to fight against the crazy hen.',
@@ -69,7 +69,7 @@ export const TRANSLATIONS = {
       submitBtn: 'Say hello :)'
     },
     projectDetail: {
-      back: 'Back to Projects',
+      back: 'Go Back',
       duration: 'Duration',
       implementation: 'Implementation Details',
       tools: 'Tools & Technologies',
@@ -149,7 +149,7 @@ export const TRANSLATIONS = {
       tag: 'Meine Arbeit',
       title: 'Projekte',
       mainDescription: 'Meine Projekte aus Weiterbildung und eigener Praxis — viele davon direkt im Browser testbar. Zu jedem Projekt findest du eine kurze Beschreibung, die wichtigsten Funktionen und Hinweise zur Umsetzung. Außerdem verlinke ich jeweils die Live-Demo und das Repository, damit du dir den Code ansehen und die Anwendung direkt ausprobieren kannst.',
-      featuredDescription: 'Entdecke eine Auswahl meiner besten Arbeiten. Hier findest du interaktive Anwendungen und Spiele, die meine Fähigkeiten in der Frontend-Entwicklung zeigen.',
+      featuredDescription: 'Ein Projektmanagement-Tool im Kanban-Stil, inspiriert von Trello. Erstelle Aufgaben, weise Benutzer zu und behalte den Überblick über deinen Workflow in einer klaren Board-Ansicht.',
       detailsBtn: 'Projekt-Details',
       polloTitle: 'El Pollo Loco',
       polloDesc: 'Ein Jump-, Run- und Throw-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Flaschen zu finden, um gegen die verrückte Henne zu kämpfen.',
@@ -182,7 +182,7 @@ export const TRANSLATIONS = {
       submitBtn: 'Sag Hallo :)'
     },
     projectDetail: {
-      back: 'Zurück zu den Projekten',
+      back: 'Zurück',
       duration: 'Dauer',
       implementation: 'Details zur Umsetzung',
       tools: 'Tools & Technologien',
