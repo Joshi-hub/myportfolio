@@ -2,8 +2,9 @@
   <div class="container">
     <div class="header-row">
       <div class="title-wrapper">
-        <h4>MY Stack</h4>
-        <h2>Skills set</h2>
+        <h4>{{ ls.t("skills").subtitle }}</h4>
+        <h2>{{ ls.t("skills").title }}</h2>
+
         <img
           src="assets/img/skill-cirkel.png"
           alt="Skill set"
@@ -11,11 +12,17 @@
         />
       </div>
 
-      <img
-        src="assets/img/Frame 637.png"
-        alt="Skills description"
-        class="description-img"
-      />
+      <div class="description-wrapper">
+        <img
+          src="assets/img/aa.png"
+          [alt]="ls.t('skills').descriptionAlt"
+          class="description-img"
+        />
+
+        <p class="description-text">
+          {{ ls.t("skills").descriptionText }}
+        </p>
+      </div>
     </div>
 
     <div class="content-row">
@@ -28,6 +35,21 @@
       <div class="sticker-wrapper">
         <button type="button" class="sticker-btn" (click)="toggleSticker()">
           <img [src]="stickerSrc" alt="Sticker" class="sticker-img" />
+          <img
+            *ngIf="!isOpen"
+            src="assets/img/stickerarrow.png"
+            alt=""
+            class="sticker-arrow"
+            aria-hidden="true"
+          />
+
+          <img
+            *ngIf="!isOpen"
+            src="assets/img/Pull-to-peel.png"
+            alt=""
+            class="sticker-label"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </div>

@@ -20,7 +20,7 @@ export class SkillsSectionComponent {
     { name: 'Rest-API', icon: 'assets/img/rastapi.png' },
   ];
 
-  private readonly IMG_CLOSED = 'assets/img/sticker.png';
+  private readonly IMG_CLOSED = 'assets/img/stickerr.png';
   private readonly IMG_MID = 'assets/img/Property 1=Variant3.png';
   private readonly IMG_OPEN = 'assets/img/Property 1=Hover (1).png';
 
@@ -47,7 +47,7 @@ export class SkillsSectionComponent {
       this.stickerSrc = this.IMG_OPEN;
       this.isOpen = true;
       this.isAnimating = false;
-    }, 150);
+    }, 60);
   }
 
   private animateToClosed() {
@@ -56,6 +56,6 @@ export class SkillsSectionComponent {
       this.stickerSrc = this.IMG_CLOSED;
       this.isOpen = false;
       this.isAnimating = false;
-    }, 150);
+    }, 60);
   }
 }

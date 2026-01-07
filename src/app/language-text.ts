@@ -30,8 +30,9 @@ export const TRANSLATIONS = {
     skills: {
       subtitle: 'MY Stack',
       title: 'Skill set',
-      descriptionAlt: 'Skills description' 
-    },
+      descriptionAlt: 'Skills description',
+      descriptionText: 'A short introduction of your skills. Highlight your experience with front-end technologies and emphasize your openness to learning and adapting to new technologies.'
+    },    
     projects: {
       tag: 'My work',
       title: 'Projects',
@@ -143,8 +144,9 @@ export const TRANSLATIONS = {
     skills: {
       subtitle: 'Mein Stack',
       title: 'Skills',
-      descriptionAlt: 'Skill-Beschreibung'
-    },
+      descriptionAlt: 'Skill-Beschreibung',
+      descriptionText: 'Eine kurze Einordnung meiner Skills. Fokus auf Frontend-Technologien, saubere Umsetzung und die Bereitschaft, neue Tools und Standards schnell zu lernen und im Projekt sauber einzusetzen.'
+    },    
     projects: {
       tag: 'Meine Arbeit',
       title: 'Projekte',
