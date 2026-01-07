@@ -3,18 +3,14 @@
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
-
   position: relative;
   overflow: hidden;
-
   color: var(--text-main);
   padding: clamp(96px, 12vw, 140px) 16px clamp(180px, 22vw, 260px) 16px;
 
-  /* Typography */
   h4 {
-    font-family: 'Bricolage Grotesque';
     font-weight: 500;
-    font-size: clamp(14px, 3.5vw, 20px);
+    font-size: 20px;
     line-height: 1;
     text-align: right;
     text-transform: uppercase;
@@ -22,9 +18,8 @@
   }
 
   h2 {
-    font-family: 'Bricolage Grotesque';
     font-weight: 700;
-    font-size: clamp(44px, 10vw, 64px);
+    font-size: 64px;
     line-height: 1;
     text-align: right;
     margin: 25px 0 0;
@@ -35,7 +30,6 @@
     }
   }
 
-  /* Header */
   .header-row {
     display: flex;
     flex-direction: column;
@@ -73,7 +67,7 @@
   .description-img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 170px;
   }
 
   .description-text {
@@ -81,24 +75,16 @@
     top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     width: min(88%, 480px);
     margin: 0;
-
-    font-family: 'Bricolage Grotesque';
     font-weight: 500;
-    font-size: clamp(12px, 1.4vw, 16px);
     line-height: 1.4;
     text-align: left;
-
-    color: #111;
-    padding: clamp(10px, 1.6vw, 16px) clamp(12px, 1.8vw, 18px);
-
+    color: var(--base-dark);
     max-height: 70%;
     overflow: hidden;
   }
 
-  /* Content */
   .content-row {
     display: flex;
     flex-direction: column;
@@ -197,18 +183,18 @@
       filter: grayscale(100%);
       opacity: 0.9;
     }
-
+  
     .skill-card:hover img {
       filter: none;
       opacity: 1;
-      transform: scale(1.12);
+      transform: scale(0.75);
     }
-  }
+  }  
 
   @media screen and (max-width: 420px) {
     .description-text {
       width: 90%;
-      font-size: 12px;
+      font-size: 16px;
       line-height: 1.35;
       max-height: 74%;
     }
@@ -244,7 +230,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-
       padding-left: 500px;
       gap: 80px;
       margin-top: 0;
