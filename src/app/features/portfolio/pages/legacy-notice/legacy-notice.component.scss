@@ -105,6 +105,14 @@
   fill: currentColor !important;
 }
 
+:host ::ng-deep app-footer.legacy-notice__footer .footer-badge__icon {
+  filter: brightness(0) saturate(100%);
+}
+
+:host ::ng-deep app-footer.legacy-notice__footer .footer-badge:hover .footer-badge__icon,
+:host ::ng-deep app-footer.legacy-notice__footer .footer-badge:focus-visible .footer-badge__icon {
+  filter: brightness(0) saturate(100%);
+}
 
 @media (max-width: 1100px) {
   .legacy-notice__container {
