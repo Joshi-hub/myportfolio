@@ -1,13 +1,15 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-left">
-      <a href="#top">
+      <a href="#top" class="footer-logo-link">
         <img src="assets/img/Logo.png" alt="Logo" class="footer-logo" />
       </a>
-      <span class="copyright">{{ ls.t('footer').copyright }}</span>
-
-      <a routerLink="/projects/legacy-notice" class="legal-link legal-link--circle">
-        <span class="nav-text">{{ ls.t('footer').legacy }}</span>
+      <span class="copyright">{{ ls.t("footer").copyright }}</span>
+      <a
+        routerLink="/projects/legacy-notice"
+        class="legal-link legal-link--circle"
+      >
+        <span class="nav-text">{{ ls.t("footer").legacy }}</span>
         <img src="assets/img/B.1 3.png" alt="" class="hover-img" />
       </a>
     </div>
@@ -26,9 +28,11 @@
           aria-hidden="true"
         />
         <span class="footer-badge__text footer-badge__text--initial">
-          {{ ls.t('footer').github }}
+          {{ ls.t("footer").github }}
         </span>
-        <span class="footer-badge__text footer-badge__text--hover">Joshi-hub</span>
+        <span class="footer-badge__text footer-badge__text--hover"
+          >Joshi-hub</span
+        >
       </a>
 
       <a
@@ -44,10 +48,10 @@
           aria-hidden="true"
         />
         <span class="footer-badge__text footer-badge__text--initial">
-          {{ ls.t('footer').linkedin }}
+          {{ ls.t("footer").linkedin }}
         </span>
         <span class="footer-badge__text footer-badge__text--hover">
-          {{ ls.t('footer').connect }}
+          {{ ls.t("footer").connect }}
         </span>
       </a>
 
@@ -59,10 +63,10 @@
           aria-hidden="true"
         />
         <span class="footer-badge__text footer-badge__text--initial">
-          {{ ls.t('footer').contact }}
+          {{ ls.t("footer").contact }}
         </span>
         <span class="footer-badge__text footer-badge__text--hover">
-          {{ ls.t('footer').sayHello }}
+          {{ ls.t("footer").sayHello }}
         </span>
       </a>
     </nav>
