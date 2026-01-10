@@ -4,7 +4,6 @@
 
 .testimonials {
   padding-bottom: 200px;
-  font-family: "Bricolage Grotesque", sans-serif;
   color: var(--bg-dark);
   overflow: visible;
 }
@@ -95,9 +94,6 @@
   position: absolute;
   width: var(--card-w);
   overflow: visible;
-  filter: drop-shadow(
-    0 18px 35px color-mix(in srgb, var(--bg-dark) 18%, transparent)
-  );
   transition: z-index 0s linear, transform 180ms ease;
 }
 
@@ -116,7 +112,7 @@
   border-radius: 18px;
   opacity: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
   transform: none;
   object-fit: cover;
   transition: opacity 220ms ease;
@@ -129,7 +125,7 @@
   display: flex;
   flex-direction: column;
   color: color-mix(in srgb, var(--bg-dark) 90%, transparent);
-  z-index: 2;
+  z-index: 3;
   transition: opacity 220ms ease;
 }
 
@@ -140,7 +136,7 @@
 
 .note:hover .note__content,
 .note:focus-within .note__content {
-  opacity: 0.18;
+  opacity: 1;
 }
 
 .note:hover,
@@ -160,7 +156,7 @@
   left: 50%;
   top: 120px;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .note--right {
@@ -168,7 +164,7 @@
   right: 4%;
   top: 72px;
   transform: rotate(var(--rot));
-  z-index: 3;
+  z-index: 1;
 }
 
 .note--left:hover {
@@ -222,7 +218,7 @@
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1200px) {
   .testimonials {
     padding-bottom: 100px;
   }
