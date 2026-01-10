@@ -29,6 +29,8 @@ export class HeaderComponent implements OnDestroy {
     const input = event.target as HTMLInputElement;
     const checked = input.checked;
 
+    document.body.classList.toggle('menu-open', checked);
+
     if (this.lastChecked === checked) return;
     this.lastChecked = checked;
     this.clearFx();
@@ -50,6 +52,13 @@ export class HeaderComponent implements OnDestroy {
     }
   }
 
+  closeMenu(): void {
+    const toggle = document.getElementById('menuToggle') as HTMLInputElement | null;
+    if (toggle) toggle.checked = false;
+    document.body.classList.remove('menu-open');
+    this.lastChecked = false;
+  }
+
   private clearFx(): void {
     this.showOpenFx = false;
     this.showCloseFx = false;
@@ -61,5 +70,6 @@ export class HeaderComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     if (this.fxTimer) clearTimeout(this.fxTimer);
+    document.body.classList.remove('menu-open');
   }
 }

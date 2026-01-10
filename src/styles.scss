@@ -1,9 +1,9 @@
 :root {
-  --base-light: #F8F9FA;
-  --base-dark: #0E1013;
-  --highlight-1: #F7C518;
-  --highlight-2: #3355FF;
-  --highlight-3: #F87A55;
+  --base-light: #f8f9fa;
+  --base-dark: #0e1013;
+  --highlight-1: #f7c518;
+  --highlight-2: #3355ff;
+  --highlight-3: #f87a55;
 
   --white: var(--base-light);
   --black: var(--base-dark);
@@ -28,7 +28,7 @@
 .bricolage-grotesque {
   font-family: "Bricolage Grotesque", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; 
+  font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
@@ -48,14 +48,16 @@
   font-weight: 200;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 html {
-  font-size: 16px; 
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -65,6 +67,11 @@ body {
   color: var(--text-main);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+  height: 100vh;
 }
 
 a {
@@ -80,7 +87,12 @@ button {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -111,7 +123,8 @@ p {
   font-weight: 700;
   box-shadow: 2px 6px 0 var(--bg-dark);
   cursor: pointer;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
@@ -128,8 +141,12 @@ p {
   will-change: transform, opacity;
 }
 
-.section-reveal.from-left  { --reveal-x: -80px; }
-.section-reveal.from-right { --reveal-x:  80px; }
+.section-reveal.from-left {
+  --reveal-x: -80px;
+}
+.section-reveal.from-right {
+  --reveal-x: 80px;
+}
 
 .section-reveal.is-visible {
   opacity: 1;
