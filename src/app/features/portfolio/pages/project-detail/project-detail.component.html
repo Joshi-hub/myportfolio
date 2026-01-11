@@ -50,10 +50,18 @@
     </div>
 
     <div class="project-detail__right">
-      <div class="project-image">
-        <img
-          [src]="project?.image"
-          [alt]="project ? getTranslation(project.titleKey) : ''"
+      <div class="image-wrapper">
+        <div class="project-image">
+          <img
+            [src]="project?.image"
+            [alt]="project ? getTranslation(project.titleKey) : ''"
+          />
+        </div>
+
+        <img 
+          [src]="project?.id === 'join' ? 'assets/img/Stickers.png' : 'assets/img/stamp.png'"
+          class="project-sticker" 
+          alt="Sticker" 
         />
       </div>
 
