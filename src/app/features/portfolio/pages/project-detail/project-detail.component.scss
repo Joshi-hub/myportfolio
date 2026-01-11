@@ -20,18 +20,15 @@
   &__wrap {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 80px;
-
     padding-left: 60px;
-    padding-right: 16px;
+    padding-right: 60px;
   }
 
   &__left {
@@ -59,13 +56,29 @@
   z-index: 3;
 }
 
+.arrow-icon {
+  width: 24px;
+  height: auto;
+  display: block;
+}
+
+.arrow-left {
+  transform: rotate(180deg);
+}
+
 .back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   font-weight: 700;
-  color: var(--accent-orange);
   margin-bottom: 50px;
-  text-align: left;
   font-size: 18px;
+  background: transparent;
+  border: none;
+  color: var(--accent-orange);
+  mix-blend-mode: difference;
+  z-index: 5;
 }
 
 .project-title {
@@ -78,7 +91,7 @@
 
 .project-title-underline {
   display: block;
-  width: 300px;
+  width: 250px;
   max-width: 100%;
   height: auto;
   margin: 10px 0 26px;
@@ -172,39 +185,6 @@
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;      
-    object-position: center; 
-  }
-}
-
-.project-btn {
-  margin-top: 50px;
-  margin-left: 20px;
-  display: block;
-  padding: 12px 40px;
-  border-radius: 999px;
-  border: 1px solid var(--white);
-  background: transparent;
-  color: var(--white);
-  font-size: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  box-shadow: 4px 4px 0 var(--white);
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-
-  &:hover {
-    background-color: var(--accent-orange);
-    border-color: var(--accent-orange);
-    color: var(--bg-dark);
-    box-shadow: 0 0 0 transparent;
-    transform: translate(4px, 4px);
   }
 }
 
@@ -234,21 +214,12 @@
 @media (max-width: 1599px) and (min-width: 1400px) {
   .project-detail::before {
     transform: translateX(-7vw) scale(1.06);
-    transform-origin: left center;
   }
 }
 
-@media (max-width: 1399px) and (min-width: 1200px) {
+@media (max-width: 1399px) and (min-width: 1100px) {
   .project-detail::before {
     transform: translateX(-15vw) scale(1);
-    transform-origin: left center;
-  }
-}
-
-@media (max-width: 1199px) and (min-width: 1100px) {
-  .project-detail::before {
-    transform: translateX(-15vw) scale(1);
-    transform-origin: left center;
   }
 }
 
@@ -269,7 +240,7 @@
     }
 
     &__right {
-      align-items: center; 
+      align-items: center;
     }
 
     &::before {
@@ -293,12 +264,12 @@
   .image-wrapper,
   .project-image {
     width: 100%;
-    max-width: 620px; 
+    max-width: 620px;
     margin: 0 auto;
   }
 
   .project-image {
-    height: 320px; 
+    height: 320px;
   }
 
   .action-row {
@@ -309,7 +280,7 @@
   }
 
   .project-btn {
-    margin: 24px 0 0; 
+    margin: 24px 0 0;
     display: inline-block;
     width: fit-content;
     max-width: 100%;
@@ -346,8 +317,19 @@
 
 @media (max-width: 600px) {
   .project-detail::before {
-    height: 140vh;
+    height: 120vh;
     transform: rotate(90deg) translateY(-100%) translateY(18vh);
+    opacity: 0.5;
+  }
+
+  .project-title-underline {
+    width: 200px;
+  }
+
+  .project-title {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 10px;
   }
 
   .project-image {
@@ -360,15 +342,47 @@
   .next-project {
     max-width: 100%;
   }
+
+  .section-text,
+  .duration-label,
+  .duration-value,
+  span {
+    color: var(--white);
+    position: relative;
+    z-index: 50;
+  }
 }
 
-@media (max-width: 380px) {
-  .project-detail::before {
-    width: 180vh;
-    transform: rotate(90deg) translateY(-100%) translateY(22vh);
-  }
+@media (orientation: landscape) and (max-height: 600px) {
+  .project-detail {
+    padding: 80px 32px 40px;
+    min-height: 100vh;
 
-  .project-image {
-    height: 240px;
+    &::before {
+      transform: none;
+      background-position: center;
+      height: 100%;
+      opacity: 0.5;
+    }
+
+    &__wrap {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: -400px;
+    }
+
+    .section-text,
+    .duration-label,
+    .duration-value,
+    span {
+      color: var(--white);
+      position: relative;
+      z-index: 50;
+    }
   }
 }

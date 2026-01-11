@@ -4,15 +4,16 @@
   <div class="project-detail__wrap">
     <div class="project-detail__left">
       <button type="button" class="back-btn" (click)="goBack()">
-        ← {{ ls.t('projectDetail').back }}
+        <img src="assets/img/next.png" alt="Back" class="arrow-icon arrow-right" />
+        {{ ls.t('projectDetail').back }}
       </button>
 
       <h1 class="project-title" *ngIf="project">
         {{ getTranslation(project.titleKey) }}
       </h1>
-
+      
       <img
-        class="project-title-underline"
+        class="project-title-underline draw-line"
         src="assets/img/19_Line.png"
         alt=""
         aria-hidden="true"
@@ -74,9 +75,13 @@
         </a>
       </div>
 
-      <a class="next-project" [routerLink]="['/projects', nextProjectId]">
-        {{ ls.t('projectDetail').next }} <span class="next-arrow">→</span>
-      </a>
+      <div class="project-detail__left">
+      
+        <a class="next-project" [routerLink]="['/projects', nextProjectId]">
+          {{ ls.t('projectDetail').next }} 
+          <img src="assets/img/next.png" alt="Next" class="arrow-icon arrow-left" />
+        </a>
+      </div>
     </div>
   </div>
 </section>
