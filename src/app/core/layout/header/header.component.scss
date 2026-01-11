@@ -326,3 +326,30 @@
     }
   }
 }
+
+:host.header--split {
+  .nav {
+    .nav-link:nth-child(1),
+    .nav-link:nth-child(2) {
+      color: var(--bg-dark);
+      font-weight: 700;      
+
+      &:hover {
+        color: var(--accent-orange); 
+      }
+      
+      &.active::after {
+        background-color: var(--bg-dark);
+      }
+    }
+
+    .nav-link:nth-child(3),
+    .nav-link:nth-child(4) {
+      color: var(--white);
+    }
+  }
+
+  .logo {
+    color: var(--bg-dark); 
+  }
+}

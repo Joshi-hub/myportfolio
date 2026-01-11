@@ -157,7 +157,37 @@
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+}
+
+.project-btn {
+  margin-top: 50px;
+  margin-left: 20px;
+  display: block;
+  padding: 12px 40px;
+  border-radius: 999px;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--white);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-btn:hover {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: var(--bg-dark);
+  box-shadow: 0 0 0 transparent;
+  transform: translate(4px, 4px);
 }
 
 .action-row {
@@ -172,10 +202,10 @@
   align-items: center;
   gap: 10px;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 50px;
   text-decoration: none;
   font-weight: 900;
-  color: var(--logo-hover);
+  color: var(--accent-orange);
 }
 
 .next-arrow {
@@ -204,14 +234,14 @@
   }
 }
 
-@media (max-width: 1019px) and (min-width: 901px) {
+@media (max-width: 1099px) and (min-width: 1020px) {
   .project-detail::before {
-    transform: translateX(-30vw) scale(1);
+    transform: translateX(-22vw) scale(1);
     transform-origin: left center;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .project-detail {
     height: auto;
     min-height: 100vh;
@@ -228,14 +258,27 @@
     padding: 0;
   }
 
+  .project-btn {
+    margin: 24px auto 0;    
+    display: inline-block;   
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 22px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    box-shadow: 3px 3px 0 var(--white);
+  }
+
+  .project-btn:hover {
+    transform: translate(3px, 3px);
+  }
+
   .action-row {
     justify-content: center;
   }
 
   .back-btn,
   .next-project {
-    position: absolute;
-    bottom: -28px;
     margin: 0;
     z-index: 3;
   }
@@ -243,6 +286,8 @@
   .back-btn {
     left: 16px;
     font-size: 16px;
+    position: absolute;
+    bottom: 3px;
   }
 
   .next-project {
