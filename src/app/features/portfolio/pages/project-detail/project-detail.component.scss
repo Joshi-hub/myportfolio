@@ -76,7 +76,7 @@
   font-size: 18px;
   background: transparent;
   border: none;
-  color: var(--accent-orange);
+  color: var(--bg-dark);
   mix-blend-mode: difference;
   z-index: 5;
 }
@@ -203,7 +203,7 @@
   margin-top: 50px;
   text-decoration: none;
   font-weight: 900;
-  color: var(--accent-orange);
+  color: var(--white);
 }
 
 .next-arrow {
@@ -275,7 +275,7 @@
   .action-row {
     width: 100%;
     max-width: 620px;
-    justify-content: center;
+    justify-content: end;
     margin: 14px auto 0;
   }
 
@@ -304,7 +304,8 @@
     left: 16px;
     font-size: 16px;
     position: absolute;
-    bottom: 3px;
+    bottom: 0;
+    color: var(--white);
   }
 
   .next-project {
@@ -312,6 +313,7 @@
     max-width: 620px;
     justify-content: flex-end;
     margin: 18px auto 0;
+    color: var(--white);
   }
 }
 
