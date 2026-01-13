@@ -36,7 +36,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       duration: '3 weeks',
       image: 'assets/img/Pollo.png',
       githubUrl: 'https://github.com/Joshi-hub/Ell-Pollo-Loco',
-      liveTestUrl: '#'
+      liveTestUrl: 'http://ellpollolooco.joshuaauerbach.de/index.html'
     },
     {
       id: 'join',
@@ -45,7 +45,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       duration: '3 weeks',
       image: 'assets/img/join.png',
       githubUrl: 'https://github.com/Joshi-hub/Join',
-      liveTestUrl: '#'
+      liveTestUrl: 'http://join.joshuaauerbach.de/index.html'
     },
     {
       id: 'debubble',
