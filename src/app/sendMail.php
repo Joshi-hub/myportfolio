@@ -1,37 +1,48 @@
 <?php
 
 switch ($_SERVER['REQUEST_METHOD']) {
-    case ("OPTIONS"): //Allow preflighting to take place.
+    case ("OPTIONS"): 
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: POST");
         header("Access-Control-Allow-Headers: content-type");
         exit;
-        case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: *");
-            // Payload is not send to $_POST Variable,
-            // is send to php:input as a text
-            $json = file_get_contents('php://input');
-            //parse the Payload from text format to Object
-            $params = json_decode($json);
-    
-            $email = $params->email;
-            $name = $params->name;
-            $message = $params->message;
-    
-            $recipient = 'joshuaauerbach@web.de';  
-            $subject = "Contact From <$email>";
-            $message = "From:" . $name . "<br>" . $message ;
-    
-            $headers   = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=utf-8';
+    case("POST"): 
+        header("Access-Control-Allow-Origin: *");
+        $json = file_get_contents('php://input');
+        $params = json_decode($json);
 
-            // Additional headers
-            $headers[] = "From: noreply@mywebsite.com";
-
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
-            break;
-        default: //Reject any non POST or OPTIONS requests.
-            header("Allow: POST", true, 405);
+        if (!$params) {
+            http_response_code(400);
             exit;
-    } 
+        }
+
+        $email = $params->email;
+        $name = $params->name;
+        $message_text = $params->message;
+
+        $recipient = 'joshuaauerbach20@gmail.com';  
+        $subject = "Kontaktanfrage von <$email>";
+        $full_message = "Name: " . $name . "<br>Nachricht: " . $message_text;
+
+        $headers   = array();
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
+
+        $from_email = "info@joshuaauerbach.de"; 
+        $headers[] = "From: " . $from_email;
+
+        $success = mail($recipient, $subject, $full_message, implode("\r\n", $headers), "-f " . $from_email);
+
+        if ($success) {
+            http_response_code(200);
+            echo "Mail sent";
+        } else {
+            http_response_code(500);
+            echo "Mail failed";
+        }
+        break;
+    default:
+        header("Allow: POST", true, 405);
+        exit;
+} 
+?>

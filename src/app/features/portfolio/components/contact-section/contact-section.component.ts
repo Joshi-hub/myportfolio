@@ -13,7 +13,7 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
 export class ContactSectionComponent {
   constructor(private http: HttpClient, public ls: LanguageService) {}
 
-  mailTest = true;
+  mailTest = false; 
 
   formStatus: FormStatus = 'idle';
   formMessage = '';
@@ -24,7 +24,7 @@ export class ContactSectionComponent {
   contactData = this.getEmptyContactData();
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://portfolio.joshuaauerbach.de/sendMail.php', 
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
