@@ -86,6 +86,7 @@ export const TRANSLATIONS = {
     footer: {
       copyright: '© Joshua Auerbach 2025',
       legacy: 'Legacy Notice',
+      privacy: 'Privacy Policy',
       github: 'Github',
       linkedin: 'Linkedin',
       contact: 'Contact',
@@ -111,6 +112,15 @@ export const TRANSLATIONS = {
       lawTitle: 'Governing law',
       lawText: 'These terms are governed by applicable laws.',
       update: 'Last update: 02 July 2024'
+    },
+    privacyNotice: {
+      title: 'Privacy Policy',
+      subtitle: 'Data Protection at a Glance',
+      introTitle: 'General Information',
+      introText: 'The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified.',
+      rightsTitle: 'Your Rights',
+      rightsText: 'You have the right to receive information about the origin, recipient, and purpose of your stored personal data at any time free of charge. You also have a right to request the correction or deletion of this data.',
+      update: 'Last update: 16 January 2026'
     }
   },
   de: {
@@ -200,6 +210,7 @@ export const TRANSLATIONS = {
     footer: {
       copyright: '© Joshua Auerbach 2025',
       legacy: 'Impressum',
+      privacy: 'Datenschutz',
       github: 'Github',
       linkedin: 'Linkedin',
       contact: 'Kontakt',
@@ -225,6 +236,15 @@ export const TRANSLATIONS = {
       lawTitle: 'Anwendbares Recht',
       lawText: 'Diese Bedingungen unterliegen den geltenden Gesetzen.',
       update: 'Letztes Update: 02. Juli 2024'
+    },
+    privacyNotice: {
+      title: 'Datenschutzerklärung',
+      subtitle: 'Datenschutz auf einen Blick',
+      introTitle: 'Allgemeine Hinweise',
+      introText: 'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.',
+      rightsTitle: 'Ihre Rechte',
+      rightsText: 'Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.',
+      update: 'Letztes Update: 16. Januar 2026'
     }
   }
 } as const;

@@ -12,6 +12,7 @@ import { TestimonialsSectionComponent } from './components/testimonials-section/
 import { ProjectDetailComponent } from './pages/project-detail/project-detail.component'; 
 import { RouterModule } from '@angular/router';
 import { LegacyNoticeComponent } from './pages/legacy-notice/legacy-notice.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LegacyNoticeComponent } from './pages/legacy-notice/legacy-notice.compo
     ContactSectionComponent,
     TestimonialsSectionComponent,
     ProjectDetailComponent,
-    LegacyNoticeComponent
+    LegacyNoticeComponent,
+    PrivacyComponent
   ],
   imports: [
     CommonModule,

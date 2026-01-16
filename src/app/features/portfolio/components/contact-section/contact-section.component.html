@@ -5,9 +5,9 @@
   <div class="container">
     <div class="content-wrapper">
       <div class="contact-info">
-        <h4 class="section-tag">{{ ls.t('contact').tag }}</h4>
+        <h4 class="section-tag">{{ ls.t("contact").tag }}</h4>
         <h2 class="main-title" [innerHTML]="ls.t('contact').title"></h2>
-        <p class="description">{{ ls.t('contact').description }}</p>
+        <p class="description">{{ ls.t("contact").description }}</p>
 
         <div class="arrow-container">
           <img src="assets/img/Line.png" alt="arrow" class="arrow-img" />
@@ -17,13 +17,18 @@
       <div class="form-wrapper">
         <img src="assets/img/stamp.png" alt="Stamp" class="stamp-img" />
 
-        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form" novalidate>
+        <form
+          (ngSubmit)="onSubmit(contactForm)"
+          #contactForm="ngForm"
+          class="contact-form"
+          novalidate
+        >
           <p class="error-text" [class.visible]="formStatus !== 'idle'">
             {{ formMessage }}
           </p>
 
           <div class="form-group">
-            <label for="name">{{ ls.t('contact').nameLabel }}</label>
+            <label for="name">{{ ls.t("contact").nameLabel }}</label>
             <input
               type="text"
               id="name"
@@ -34,13 +39,18 @@
               required
               class="form-input"
             />
-            <p class="error-text" [class.visible]="nameRef.invalid && (nameRef.touched || contactForm.submitted)">
-              {{ ls.t('contact').errorName }}
+            <p
+              class="error-text"
+              [class.visible]="
+                nameRef.invalid && (nameRef.touched || contactForm.submitted)
+              "
+            >
+              {{ ls.t("contact").errorName }}
             </p>
           </div>
 
           <div class="form-group">
-            <label for="email">{{ ls.t('contact').emailLabel }}</label>
+            <label for="email">{{ ls.t("contact").emailLabel }}</label>
             <input
               type="email"
               id="email"
@@ -52,13 +62,18 @@
               [placeholder]="ls.t('contact').emailPlaceholder"
               class="form-input"
             />
-            <p class="error-text" [class.visible]="emailRef.invalid && (emailRef.touched || contactForm.submitted)">
-              {{ ls.t('contact').errorEmail }}
+            <p
+              class="error-text"
+              [class.visible]="
+                emailRef.invalid && (emailRef.touched || contactForm.submitted)
+              "
+            >
+              {{ ls.t("contact").errorEmail }}
             </p>
           </div>
 
           <div class="form-group">
-            <label for="message">{{ ls.t('contact').messageLabel }}</label>
+            <label for="message">{{ ls.t("contact").messageLabel }}</label>
             <textarea
               id="message"
               name="message"
@@ -69,8 +84,14 @@
               required
               class="form-input textarea"
             ></textarea>
-            <p class="error-text" [class.visible]="messageRef.invalid && (messageRef.touched || contactForm.submitted)">
-              {{ ls.t('contact').errorMessage }}
+            <p
+              class="error-text"
+              [class.visible]="
+                messageRef.invalid &&
+                (messageRef.touched || contactForm.submitted)
+              "
+            >
+              {{ ls.t("contact").errorMessage }}
             </p>
           </div>
 
@@ -86,18 +107,30 @@
               />
               <span class="checkbox-ui" aria-hidden="true"></span>
               <span class="policy-text">
-                {{ ls.t('contact').policyPart1 }}
-                <a routerLink="/imprint">{{ ls.t('contact').policyLink }}</a>
-                {{ ls.t('contact').policyPart2 }}
+                {{ ls.t("contact").policyPart1 }}
+                <a routerLink="/projects/privacy">{{
+                  ls.t("contact").policyLink
+                }}</a>
+                {{ ls.t("contact").policyPart2 }}
               </span>
             </label>
-            <p class="error-text" [class.visible]="privacyRef.invalid && (privacyRef.touched || contactForm.submitted)">
-              {{ ls.t('contact').errorPrivacy }}
+            <p
+              class="error-text"
+              [class.visible]="
+                privacyRef.invalid &&
+                (privacyRef.touched || contactForm.submitted)
+              "
+            >
+              {{ ls.t("contact").errorPrivacy }}
             </p>
           </div>
 
-          <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
-            {{ ls.t('contact').submitBtn }}
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="contactForm.invalid"
+          >
+            {{ ls.t("contact").submitBtn }}
           </button>
         </form>
       </div>

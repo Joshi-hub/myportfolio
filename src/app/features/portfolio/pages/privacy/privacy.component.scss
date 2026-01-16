@@ -1,0 +1,102 @@
+.privacy-notice {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-notice__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+.privacy-notice__top {
+  position: relative;
+  background: url("/assets/img/skill-bg.png") no-repeat center bottom;
+  background-size: cover;
+  padding-bottom: 100px;
+}
+
+/* Erzwingt weiße Farbe für den Header im oberen Bereich */
+:host ::ng-deep app-header.privacy-notice__header * {
+  color: var(--white) !important;
+}
+
+.privacy-notice__top-inner {
+  position: relative;
+  z-index: 1;
+  padding: 100px 120px 50px;
+}
+
+.privacy-notice__title {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+}
+
+.privacy-notice__content {
+  background: var(--white);
+  padding: 26px 0 44px;
+}
+
+.privacy-notice__h2,
+.privacy-notice__h3 {
+  margin: 0 0 8px;
+  color: var(--highlight-blue);
+  font-weight: 900;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.privacy-notice__h2 {
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.privacy-notice__h3 {
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.privacy-notice__p {
+  margin: 0 0 10px;
+  max-width: 760px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--bg-dark);
+}
+
+.privacy-notice__meta {
+  margin-top: 14px;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--bg-dark) 55%, transparent);
+  font-weight: 700;
+}
+
+.privacy-notice__footer {
+  margin-top: auto;
+}
+
+/* Invertiert die Footer-Farben (Dunkel auf Weiß) */
+:host ::ng-deep app-footer.privacy-notice__footer {
+  background: var(--white); 
+}
+
+:host ::ng-deep app-footer.privacy-notice__footer * {
+  color: var(--bg-dark) !important; 
+}
+
+:host ::ng-deep app-footer.privacy-notice__footer .footer-badge__icon {
+  filter: brightness(0) saturate(100%);
+}
+
+@media (max-width: 1100px) {
+  .privacy-notice__container { padding: 0 40px; }
+}
+
+@media (max-width: 700px) {
+  .privacy-notice__container { padding: 0 20px; }
+  .privacy-notice__top-inner { padding: 52px 20px 34px; }
+  .privacy-notice__title { font-size: 34px; }
+}
