@@ -38,21 +38,21 @@
   place-items: center;
   border-radius: 999px;
   overflow: hidden;
-}
 
-.hero__socials a::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--highlight-blue);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.22s ease;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--highlight-blue);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.22s ease;
+  }
 
-.hero__socials a:hover::before,
-.hero__socials a:focus-visible::before {
-  transform: scaleY(1);
+  &:hover::before,
+  &:focus-visible::before {
+    transform: scaleY(1);
+  }
 }
 
 .hero__social-img {
@@ -77,22 +77,23 @@
   gap: 30px;
 }
 
-.hero__frontend {
-  font-size: 128px;
+.hero__frontend,
+.hero__developer {
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
   margin: 0;
 }
 
+.hero__frontend {
+  font-size: 128px;
+}
+
 .hero__developer {
   margin-top: -15px;
   margin-left: 80px;
   font-size: 128px;
-  font-weight: 900;
-  line-height: 1;
   letter-spacing: 5px;
-  text-transform: uppercase;
 }
 
 .hero__polaroid {
@@ -114,12 +115,12 @@
   transform: translate(var(--tx), var(--ty)) rotate(var(--rot));
   filter: grayscale(100%);
   transition: filter 0.25s ease, transform 0.25s ease;
-}
 
-.hero__polaroid-img:hover,
-.hero__polaroid-img:focus-visible {
-  filter: grayscale(0%);
-  transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(1.02);
+  &:hover,
+  &:focus-visible {
+    filter: grayscale(0%);
+    transform: translate(var(--tx), var(--ty)) rotate(var(--rot)) scale(1.02);
+  }
 }
 
 .hero__cta {
@@ -137,20 +138,15 @@
   letter-spacing: 1px;
   cursor: pointer;
   box-shadow: 4px 4px 0 var(--white);
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
-}
+  transition: all 0.2s ease;
 
-.hero__cta:hover {
-  background-color: var(--accent-orange);
-  border-color: var(--accent-orange);
-  color: var(--bg-dark);
-  box-shadow: 0 0 0 transparent;
-  transform: translate(4px, 4px);
+  &:hover {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+    color: var(--bg-dark);
+    box-shadow: 0 0 0 transparent;
+    transform: translate(4px, 4px);
+  }
 }
 
 .hero__badge-container {
@@ -165,10 +161,27 @@
   border-radius: 999px;
   border: 2px solid var(--white);
   transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
-.hero__badge-container:hover {
-  width: 250px;
+  &:hover {
+    width: 250px;
+    .hero__text-mask {
+      background: color-mix(in srgb, var(--white) 10%, transparent);
+    }
+    .hero__hand-img {
+      opacity: 1;
+      animation: rollHand 0.3s linear forwards;
+    }
+    .hero__badge-text--initial {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    .hero__badge-text--hover {
+      opacity: 1;
+      transform: translateX(0);
+      background: var(--highlight-blue);
+      border-radius: 999px;
+    }
+  }
 }
 
 .hero__text-mask {
@@ -186,10 +199,6 @@
   transition: background 0.3s ease;
 }
 
-.hero__badge-container:hover .hero__text-mask {
-  background: color-mix(in srgb, var(--white) 10%, transparent);
-}
-
 .hero__hand-img {
   position: absolute;
   top: -30px;
@@ -199,12 +208,6 @@
   opacity: 0;
   pointer-events: none;
   z-index: 20;
-  transition: none;
-}
-
-.hero__badge-container:hover .hero__hand-img {
-  opacity: 1;
-  animation: rollHand 0.3s linear forwards;
 }
 
 @keyframes rollHand {
@@ -237,61 +240,55 @@
   opacity: 1;
   transform: translateX(0);
 }
-
 .hero__badge-text--hover {
   opacity: 0;
   transform: translateX(20px);
 }
-
-.hero__badge-container:hover .hero__badge-text--initial {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-.hero__badge-container:hover .hero__badge-text--hover {
-  opacity: 1;
-  transform: translateX(0);
-  background: var(--highlight-blue);
-  border-radius: 999px;
-}
-
 .hero__word {
   display: inline-flex;
   gap: 2px;
 }
 
-.hero__word,
-.hero__char::before {
-  text-transform: none !important;
-}
-
 .hero__char {
   position: relative;
-  display: inline-block;
-  line-height: 1;
+  display: inline-grid;
+  grid-template-areas: "stack";
+  place-items: center;
   cursor: default;
-}
+  line-height: 1;
 
-.hero__char::before {
-  content: attr(data-upper);
-  display: inline-block;
-  color: var(--white);
-  transition: color 0.25s ease, transform 0.25s ease;
-  transform: translateY(0);
-}
+  &::before {
+    content: attr(data-upper);
+    grid-area: stack;
+    color: var(--white);
+    transition: opacity 0.25s ease, color 0.25s ease;
+    opacity: 1;
+    text-transform: none !important;
+  }
 
-.hero__char:hover::before {
-  content: attr(data-lower);
-  color: var(--highlight-1);
-  transform: translateY(0);
+  &::after {
+    content: attr(data-lower);
+    grid-area: stack;
+    color: var(--highlight-1);
+    transition: opacity 0.25s ease;
+    opacity: 0;
+    text-transform: none !important;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0;
+    }
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 
 @media (max-width: 1200px) {
   .hero__inner {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
-
   .hero__socials {
     display: none;
   }
@@ -317,31 +314,34 @@
 
   .hero__badge-container {
     position: relative;
-    top: auto;
-    left: auto;
     order: 1;
     margin-bottom: 6px;
     pointer-events: none;
-  }
-
-  .hero__hand-img {
-    opacity: 1;
+    .hero__hand-img {
+      opacity: 1;
+    }
+    .hero__badge-text--initial {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    .hero__badge-text--hover {
+      opacity: 1;
+      transform: translateX(0);
+      background: var(--highlight-blue);
+      border-radius: 999px;
+    }
   }
 
   .hero__frontend {
     order: 2;
     font-size: 42px;
-    line-height: 1;
   }
-
   .hero__developer {
     order: 3;
     font-size: 42px;
-    line-height: 1;
     margin: 0;
     letter-spacing: 2px;
   }
-
   .hero__cta {
     order: 4;
     align-self: center;
@@ -356,25 +356,11 @@
     justify-content: center;
     margin-top: 14px;
   }
-
   .hero__polaroid-img {
     height: auto;
     margin-top: 0;
     filter: none;
-
     --tx: 0px;
     --ty: 0px;
-  }
-
-  .hero__badge-text--initial {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  .hero__badge-text--hover {
-    opacity: 1;
-    transform: translateX(0);
-    background: var(--highlight-blue);
-    border-radius: 999px;
   }
 }

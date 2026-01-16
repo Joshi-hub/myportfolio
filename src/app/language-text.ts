@@ -114,14 +114,16 @@ export const TRANSLATIONS = {
       update: 'Last update: 02 July 2024'
     },
     privacyNotice: {
-      title: 'Privacy Policy',
-      subtitle: 'Data Protection at a Glance',
-      introTitle: 'General Information',
-      introText: 'The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified.',
-      rightsTitle: 'Your Rights',
-      rightsText: 'You have the right to receive information about the origin, recipient, and purpose of your stored personal data at any time free of charge. You also have a right to request the correction or deletion of this data.',
-      update: 'Last update: 16 January 2026'
-    }
+    title: 'Privacy Policy',
+    subtitle: 'Data Protection at a Glance',
+    introTitle: 'General Information',
+    introText: 'The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified.',
+    contactTitle: 'Contact Form & E-Mail',
+    contactText: 'If you send me inquiries via the contact form or e-mail, your details from the inquiry form, including the contact data you provided there (Name, E-Mail), will be stored by me for the purpose of processing the inquiry and in the event of follow-up questions. I do not pass on this data without your consent.',
+    rightsTitle: 'Your Rights',
+    rightsText: 'You have the right to receive information about the origin, recipient, and purpose of your stored personal data at any time free of charge. You also have a right to request the correction or deletion of this data.',
+    update: 'Last update: January 2026'
+  }
   },
   de: {
     nav: {
@@ -238,13 +240,15 @@ export const TRANSLATIONS = {
       update: 'Letztes Update: 02. Juli 2024'
     },
     privacyNotice: {
-      title: 'Datenschutzerklärung',
-      subtitle: 'Datenschutz auf einen Blick',
-      introTitle: 'Allgemeine Hinweise',
-      introText: 'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.',
-      rightsTitle: 'Ihre Rechte',
-      rightsText: 'Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.',
-      update: 'Letztes Update: 16. Januar 2026'
-    }
+    title: 'Datenschutzerklärung',
+    subtitle: 'Datenschutz auf einen Blick',
+    introTitle: 'Allgemeine Hinweise',
+    introText: 'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.',
+    contactTitle: 'Kontaktformular & E-Mail',
+    contactText: 'Wenn Sie mir per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, E-Mail) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei mir gespeichert. Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.',
+    rightsTitle: 'Ihre Rechte',
+    rightsText: 'Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.',
+    update: 'Letztes Update: Januar 2026'
+  }
   }
 } as const;
