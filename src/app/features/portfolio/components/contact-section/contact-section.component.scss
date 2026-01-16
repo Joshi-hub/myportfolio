@@ -74,7 +74,7 @@
   }
 
   .arrow-container {
-    margin-top: 25px;
+    margin-top: 140px;
     padding-right: 70px;
     display: flex;
     justify-content: flex-end;
@@ -133,11 +133,21 @@
 }
 
 @keyframes contact-arrow-wipe-rtl {
-  0% { clip-path: inset(0 0 0 100%); }
-  4% { clip-path: inset(0 0 0 0); }
-  45% { clip-path: inset(0 0 0 0); }
-  48% { clip-path: inset(0 0 0 100%); }
-  100% { clip-path: inset(0 0 0 100%); }
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  4% {
+    clip-path: inset(0 0 0 0);
+  }
+  45% {
+    clip-path: inset(0 0 0 0);
+  }
+  48% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -259,7 +269,8 @@
     border-bottom-color: var(--highlight-blue);
   }
 
-  .form-group:has(+ .form-group:hover) .form-input:not(:focus):not(:focus-visible) {
+  .form-group:has(+ .form-group:hover)
+    .form-input:not(:focus):not(:focus-visible) {
     border-bottom-color: var(--highlight-blue);
   }
 
@@ -310,9 +321,19 @@
   }
 
   .error-text {
-    font-size: 18px;
-    color: red;
-    margin-top: 20px;
+    font-size: 16px;
+    color: #ff0000;
+    margin-top: 4px;
+    margin-bottom: 0;
+    min-height: 18px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   .policy input:checked + .checkbox-ui {
@@ -362,8 +383,8 @@
     font-weight: 700;
     box-shadow: 2px 6px 0 var(--bg-dark);
     cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease,
-      color 0.2s ease, opacity 0.2s ease;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease,
+      transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     margin-top: 10px;
 
     &:hover:not(:disabled) {

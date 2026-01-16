@@ -6,12 +6,8 @@
     <div class="content-wrapper">
       <div class="contact-info">
         <h4 class="section-tag">{{ ls.t('contact').tag }}</h4>
-        
         <h2 class="main-title" [innerHTML]="ls.t('contact').title"></h2>
-
-        <p class="description">
-          {{ ls.t('contact').description }}
-        </p>
+        <p class="description">{{ ls.t('contact').description }}</p>
 
         <div class="arrow-container">
           <img src="assets/img/Line.png" alt="arrow" class="arrow-img" />
@@ -21,13 +17,8 @@
       <div class="form-wrapper">
         <img src="assets/img/stamp.png" alt="Stamp" class="stamp-img" />
 
-        <form
-          (ngSubmit)="onSubmit(contactForm)"
-          #contactForm="ngForm"
-          class="contact-form"
-          novalidate
-        >
-          <p class="error-text" *ngIf="formStatus !== 'idle'">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form" novalidate>
+          <p class="error-text" [class.visible]="formStatus !== 'idle'">
             {{ formMessage }}
           </p>
 
@@ -43,11 +34,7 @@
               required
               class="form-input"
             />
-
-            <p
-              class="error-text"
-              *ngIf="nameRef.invalid && (nameRef.touched || contactForm.submitted)"
-            >
+            <p class="error-text" [class.visible]="nameRef.invalid && (nameRef.touched || contactForm.submitted)">
               {{ ls.t('contact').errorName }}
             </p>
           </div>
@@ -65,11 +52,7 @@
               [placeholder]="ls.t('contact').emailPlaceholder"
               class="form-input"
             />
-
-            <p
-              class="error-text"
-              *ngIf="emailRef.invalid && (emailRef.touched || contactForm.submitted)"
-            >
+            <p class="error-text" [class.visible]="emailRef.invalid && (emailRef.touched || contactForm.submitted)">
               {{ ls.t('contact').errorEmail }}
             </p>
           </div>
@@ -86,11 +69,7 @@
               required
               class="form-input textarea"
             ></textarea>
-
-            <p
-              class="error-text"
-              *ngIf="messageRef.invalid && (messageRef.touched || contactForm.submitted)"
-            >
+            <p class="error-text" [class.visible]="messageRef.invalid && (messageRef.touched || contactForm.submitted)">
               {{ ls.t('contact').errorMessage }}
             </p>
           </div>
@@ -106,27 +85,18 @@
                 required
               />
               <span class="checkbox-ui" aria-hidden="true"></span>
-
               <span class="policy-text">
                 {{ ls.t('contact').policyPart1 }}
                 <a routerLink="/imprint">{{ ls.t('contact').policyLink }}</a>
                 {{ ls.t('contact').policyPart2 }}
               </span>
             </label>
-
-            <p
-              class="error-text"
-              *ngIf="privacyRef.invalid && (privacyRef.touched || contactForm.submitted)"
-            >
+            <p class="error-text" [class.visible]="privacyRef.invalid && (privacyRef.touched || contactForm.submitted)">
               {{ ls.t('contact').errorPrivacy }}
             </p>
           </div>
 
-          <button
-            type="submit"
-            class="submit-btn"
-            [disabled]="contactForm.invalid"
-          >
+          <button type="submit" class="submit-btn" [disabled]="contactForm.invalid">
             {{ ls.t('contact').submitBtn }}
           </button>
         </form>

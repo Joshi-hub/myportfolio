@@ -93,7 +93,7 @@ export const TRANSLATIONS = {
       sayHello: 'Say hello'
     },
     legacyNotice: {
-      title: 'Legal notice',
+      title: 'Legacy Notice',
       imprint: 'Imprint',
       address: 'Bad Rappenau, Germany',
       brandTitle: 'Exploring the Brand',
@@ -155,7 +155,7 @@ export const TRANSLATIONS = {
       detailsBtn: 'Projekt-Details',
       polloTitle: 'El Pollo Loco',
       polloDesc: 'Ein Jump-, Run- und Throw-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Tabasco-Flaschen zu finden, um gegen die verrückte Henne zu kämpfen.',
-      joinTitle: 'DABubble',
+      joinTitle: 'Join',
       joinDesc: 'Ein Projektmanagement-Tool im Kanban-Stil, inspiriert von Trello. Erstelle Aufgaben, weise Benutzer zu und behalte den Überblick über deinen Workflow in einer klaren Board-Ansicht.',
       debubbleTitle: 'Debubble',
       debubbleDescription: 'Ein Chat Messenger mit Echtzeit-Kommunikation, Channels und Direktnachrichten.',
