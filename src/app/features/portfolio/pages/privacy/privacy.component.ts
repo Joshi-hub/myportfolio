@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
-import { LanguageService } from '../../../../language.service'; // Pfad prüfen (muss evtl. ../../../ sein)
+import { LanguageService } from '../../../../language.service'; 
 
 @Component({
   selector: 'app-privacy',
@@ -10,7 +10,6 @@ import { LanguageService } from '../../../../language.service'; // Pfad prüfen 
 export class PrivacyComponent {
   constructor(
     private location: Location,
-    // Das "public" ist entscheidend, damit das HTML darauf zugreifen kann
     public ls: LanguageService 
   ) {}
 

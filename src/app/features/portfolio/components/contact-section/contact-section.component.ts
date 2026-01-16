@@ -11,9 +11,8 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error' | 'info';
   styleUrls: ['./contact-section.component.scss']
 })
 export class ContactSectionComponent {
+  
   constructor(private http: HttpClient, public ls: LanguageService) {}
-
-  mailTest = false; 
 
   formStatus: FormStatus = 'idle';
   formMessage = '';
@@ -23,14 +22,7 @@ export class ContactSectionComponent {
 
   contactData = this.getEmptyContactData();
 
-  post = {
-    endPoint: 'https://portfolio.joshuaauerbach.de/sendMail.php', 
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-      responseType: 'text' as const
-    }
-  };
+  private readonly endPoint = 'https://portfolio.joshuaauerbach.de/sendMail.php';
 
   get isCooldownActive(): boolean {
     return Date.now() < this.cooldownUntil;
@@ -48,14 +40,7 @@ export class ContactSectionComponent {
     }
 
     if (!this.isFormValid(ngForm)) return;
-
-    this.isSubmitting = true;
-
-    if (this.mailTest) {
-      this.handleMailTest(ngForm);
-    } else {
-      this.sendMail(ngForm);
-    }
+    this.sendMail(ngForm);
   }
 
   private isFormValid(ngForm: NgForm): boolean {
@@ -78,10 +63,16 @@ export class ContactSectionComponent {
   }
 
   private sendMail(ngForm: NgForm) {
+    this.isSubmitting = true;
     this.setStatus('sending', 'sending');
 
-    this.http.post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
-      .subscribe({
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.http.post(
+      this.endPoint, 
+      JSON.stringify(this.contactData), 
+      { headers: headers, responseType: 'text' }
+    ).subscribe({
         next: () => this.handleSuccess(ngForm),
         error: () => {
           this.isSubmitting = false;
@@ -97,11 +88,6 @@ export class ContactSectionComponent {
 
     this.isSubmitting = false;
     this.setStatus('success', 'success');
-  }
-
-  private handleMailTest(ngForm: NgForm) {
-    console.log('MailTest active. Data:', this.contactData);
-    this.handleSuccess(ngForm);
   }
 
   private getEmptyContactData() {
