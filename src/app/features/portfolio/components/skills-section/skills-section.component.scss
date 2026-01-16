@@ -230,13 +230,13 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding-left: 500px;
+      padding-left: 400px;
       gap: 80px;
       margin-top: 0;
     }
 
     .skills-grid {
-      grid-template-columns: repeat(5, 78px);
+      grid-template-columns: repeat(5, 100px);
       justify-content: center;
       width: auto;
       max-width: unset;

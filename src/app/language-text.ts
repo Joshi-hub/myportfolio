@@ -85,7 +85,7 @@ export const TRANSLATIONS = {
     },
     footer: {
       copyright: '© Joshua Auerbach 2025',
-      legacy: 'Legacy Notice',
+      legacy: 'Legal Notice',
       privacy: 'Privacy Policy',
       github: 'Github',
       linkedin: 'Linkedin',
@@ -94,7 +94,7 @@ export const TRANSLATIONS = {
       sayHello: 'Say hello'
     },
     legacyNotice: {
-      title: 'Legacy Notice',
+      title: 'Legal Notice',
       imprint: 'Imprint',
       address: 'Bad Rappenau, Germany',
       brandTitle: 'Exploring the Brand',
