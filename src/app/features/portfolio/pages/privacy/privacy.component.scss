@@ -17,7 +17,6 @@
   padding-bottom: 100px;
 }
 
-/* Erzwingt weiße Farbe für den Header im oberen Bereich */
 :host ::ng-deep app-header.privacy-notice__header * {
   color: var(--white) !important;
 }
@@ -36,7 +35,6 @@
 }
 
 .privacy-notice__content {
-  background: var(--white);
   padding: 26px 0 44px;
 }
 
@@ -78,7 +76,6 @@
   margin-top: auto;
 }
 
-/* Invertiert die Footer-Farben (Dunkel auf Weiß) */
 :host ::ng-deep app-footer.privacy-notice__footer {
   background: var(--white); 
 }
