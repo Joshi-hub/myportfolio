@@ -27,7 +27,7 @@ export class ProjectsSectionComponent {
     },
     {
       id: 'debubble',
-      image: 'assets/img/dab.jpg',
+      image: 'assets/img/dab.png',
       titleKey: 'debubbleTitle',
       descKey: 'debubbleDescription',
     },

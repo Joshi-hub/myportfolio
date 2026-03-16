@@ -52,9 +52,9 @@ export class ProjectDetailComponent implements OnInit, OnDestroy {
       titleKey: 'debubbleTitle',
       descKey: 'debubbleDescription',
       duration: '2 weeks',
-      image: 'assets/img/dab.jpg',
+      image: 'assets/img/dab.png',
       githubUrl: '#',
-      liveTestUrl: '#'
+      liveTestUrl: 'https://dabubble.joshuaauerbach.de/login'
     },
   ];
 
